@@ -1,0 +1,5 @@
+[27-May-2015 18:20:05 UTC] PHP Fatal error:  Class 'common\models\LoginForm' not found in /home/ubuntu/workspace/yii2-kit/frontend/controllers/SiteController.php on line 79
+[27-May-2015 18:21:56 UTC] PHP Fatal error:  Class 'common\models\LoginForm' not found in /home/ubuntu/workspace/yii2-kit/frontend/controllers/SiteController.php on line 79
+[27-May-2015 18:24:54 UTC] PHP Fatal error:  Class 'common\models\user\models\LoginForm' not found in /home/ubuntu/workspace/yii2-kit/common/modules/user/controllers/DefaultController.php on line 56
+[27-May-2015 18:25:24 UTC] PHP Fatal error:  Class 'common\models\user\models\LoginForm' not found in /home/ubuntu/workspace/yii2-kit/common/modules/user/controllers/DefaultController.php on line 56
+[27-May-2015 19:21:38 UTC] PHP Fatal error:  Class 'common\models\User' not found in /home/ubuntu/workspace/yii2-kit/common/modules/user/models/PasswordResetRequestForm.php on line 25
