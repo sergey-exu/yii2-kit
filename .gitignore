@@ -25,3 +25,10 @@ composer.lock
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+
+
+
+#c9 files
+/.c9
+php.ini
+php_errors.log
