@@ -11,9 +11,15 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'modules' => [
+        'news' => [
+            'class' => 'frontend\modules\news\Module',
+        ],
+    ],
     'components' => [
+        
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'backend\modules\user\models\User',
             'enableAutoLogin' => true,
         ],
         'log' => [
@@ -28,20 +34,34 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'request' => [
+            'baseUrl' => ''
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                //'<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
-                //'<_c:[\w\-]+>' => '<_c>/index',
-                //'<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
+                
+                '' => 'site/index',
+                
+                'news/' => 'news/default/index',
+                'news/<alias:[\w\-]+>' => 'news/default/view',
+                
+                '<action:sections>/<id:\d+>' => 'site/<action>',
+                
+                'partners/' => 'partners/index',
+                
+                '<alias:[\w\-]+>' => 'page/view',
+                
+                
+                
                 
                 //'<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/<_a>',
                 //'<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
                 //'<_m:[\w\-]+>' => '<_m>/default/index',
                 //'<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
                 
-                '<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
+                //'<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
 
             ],
         ],
