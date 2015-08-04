@@ -1,3 +1,4 @@
+
 # Mod_Autoindex
 <IfModule mod_autoindex.c>
     # Запрещаем просмотр содержимого папок
@@ -8,6 +9,9 @@
 <IfModule mod_rewrite.c>
     Options +FollowSymlinks
     RewriteEngine On
+	
+	RewriteCond %{HTTP_HOST} ^www\.(.*)$
+	RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
     # Backend redirect
     RewriteCond %{REQUEST_URI} ^/backend

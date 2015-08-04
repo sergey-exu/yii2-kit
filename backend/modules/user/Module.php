@@ -10,6 +10,6 @@ class Module extends \yii\base\Module
     {
         parent::init();
 
-        // custom initialization code goes here 11
+        // custom initialization code goes here
     }
 }
