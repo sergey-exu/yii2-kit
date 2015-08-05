@@ -14,7 +14,7 @@ use yii\web\NotFoundHttpException;
  */
 class PageController extends Controller
 {
-    public $layout = 'column2';
+    //public $layout = 'column2';
     
     public function actionView($alias)
     {
