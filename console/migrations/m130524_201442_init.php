@@ -21,10 +21,17 @@ class m130524_201442_init extends Migration
             'password_reset_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
             'email' => Schema::TYPE_STRING . ' NOT NULL',
 
-            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 0',
+            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
+        
+        $this->insert('{{%user}}', [
+            'username' => 'test',
+            'auth_key' => 'd09rqzOiyyfj39-o2u9umK9PsbbPW8Yt',
+            'password_hash' => '$2y$13$6UudAwFUgWn8oBD6fqgKoOy8Ihpqrre4R/N72iAytxbaSyXYCIGLC',
+            'email' => 'test@test.ru',
+        ]);
     }
 
     public function down()

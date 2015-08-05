@@ -1,3 +1,1 @@
-[28-May-2015 08:06:24 UTC] PHP Fatal error:  Class 'common\models\LoginForm' not found in /home/ubuntu/workspace/yii2-kit/backend/controllers/SiteController.php on line 67
-[05-Aug-2015 10:28:00 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/backend/views/layouts/main.php on line 66
-[05-Aug-2015 10:28:16 UTC] PHP Notice:  Trying to get property of non-object in /home/ubuntu/workspace/backend/views/layouts/main.php on line 66
+[05-Aug-2015 13:48:31 UTC] PHP Fatal error:  Class '\common\models\User' not found in /home/ubuntu/workspace/vendor/yiisoft/yii2/validators/UniqueValidator.php on line 100
