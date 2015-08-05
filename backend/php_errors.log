@@ -1,1 +1,0 @@
-[05-Aug-2015 13:48:31 UTC] PHP Fatal error:  Class '\common\models\User' not found in /home/ubuntu/workspace/vendor/yiisoft/yii2/validators/UniqueValidator.php on line 100
