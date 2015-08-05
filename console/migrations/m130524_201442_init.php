@@ -18,10 +18,10 @@ class m130524_201442_init extends Migration
             'username' => Schema::TYPE_STRING . ' NOT NULL',
             'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
             'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
-            'password_reset_token' => Schema::TYPE_STRING,
+            'password_reset_token' => Schema::TYPE_STRING . ' NULL DEFAULT NULL',
             'email' => Schema::TYPE_STRING . ' NOT NULL',
 
-            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
+            'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 0',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);

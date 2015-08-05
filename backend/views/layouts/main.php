@@ -63,7 +63,7 @@ AppAsset::register($this);
                 </div>
               </form-->
               <ul class="nav navbar-nav navbar-right">
-                <li><?= Html::a('Logout ('.Yii::$app->user->identity->username.')', ['/user/default/logout'], ['data-method' => 'post']) ?></li>
+                <li><?//= Html::a('Logout ('.Yii::$app->user->identity->username.')', ['/user/default/logout'], ['data-method' => 'post']) ?></li>
                 <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
