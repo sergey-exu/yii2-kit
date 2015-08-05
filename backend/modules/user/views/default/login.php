@@ -7,7 +7,7 @@ $this->title = 'Login';
 
 
     <div class="login-box">
-      <div class="login-logo">Admin panel</div>
+      <div class="login-logo">Hi</div>
       <div class="login-box-body">
         
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
