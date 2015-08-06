@@ -11,13 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'modules' => [
-        'news' => [
-            'class' => 'frontend\modules\news\Module',
-        ],
-    ],
     'components' => [
-        
         'user' => [
             'identityClass' => 'backend\modules\user\models\User',
             'enableAutoLogin' => true,
@@ -44,12 +38,12 @@ return [
                 
                 '' => 'site/index',
                 
-                'news/' => 'news/default/index',
-                'news/<alias:[\w\-]+>' => 'news/default/view',
+                'news/' => 'news/index',
+                'news/<alias:[\w\-]+>' => 'news/view',
                 
                 '<action:sections>/<id:\d+>' => 'site/<action>',
                 
-                'partners/' => 'partners/index',
+                //'partners/' => 'partners/index',
                 
                 '<alias:[\w\-]+>' => 'page/view',
                 
