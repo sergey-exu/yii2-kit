@@ -34,7 +34,7 @@ class DefaultController extends Controller
                 //'only' => ['logout', 'login', 'error'],
                 'rules' => [
                     [
-                        'actions' => ['logout', 'signup'],
+                        'actions' => ['logout', 'signup', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -59,8 +59,6 @@ class DefaultController extends Controller
     
     
     
-    //------------------------------------------------------------------------------------
-    /*
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
@@ -71,6 +69,12 @@ class DefaultController extends Controller
            'dataProvider' => $dataProvider,
        ]);
     }
+    
+    
+    
+    //------------------------------------------------------------------------------------
+    /*
+
     
     public function actionView($id)
     {

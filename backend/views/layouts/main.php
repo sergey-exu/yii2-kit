@@ -100,13 +100,11 @@ AppAsset::register($this);
             <!-- Sidebar Menu -->
             <ul class="sidebar-menu">
               <li class="header">Разделы</li>
-              <!-- Optionally, you can add icons to the links -->
               <!--li class="active"><a href="#"><span>Link</span></a></li-->
               <li><?= Html::a('<i class="fa fa-file"></i>Pages', ['/page/default/index']) ?></li>
               <li><?= Html::a('<i class="fa fa-file-text"></i>News', ['/news/default/index']) ?></li>
               <li><?= Html::a('Banners', ['/banner/default/index']) ?></li>
-              
-              <li><a href="#"><i class="fa fa-user"></i>User</a></li>
+              <li><?= Html::a('<i class="fa fa-user"></i>News', ['/user/default/index']) ?></li>
               <!--li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
