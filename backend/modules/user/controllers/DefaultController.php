@@ -39,7 +39,7 @@ class DefaultController extends Controller
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'request-password-reset'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -146,7 +146,6 @@ class DefaultController extends Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
     
