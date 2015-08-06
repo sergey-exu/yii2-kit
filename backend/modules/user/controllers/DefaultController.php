@@ -39,7 +39,7 @@ class DefaultController extends Controller
                         'roles' => ['@'],
                     ],
                     [
-                        'actions' => ['login', 'error', 'request-password-reset'],
+                        'actions' => ['login', 'error', 'request-password-reset', 'reset-password'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -143,11 +143,13 @@ class DefaultController extends Controller
         }
     }
 
+
     public function actionLogout()
     {
         Yii::$app->user->logout();
         return $this->goHome();
     }
+    
     
     public function actionSignup()
     {
@@ -164,6 +166,7 @@ class DefaultController extends Controller
             'model' => $model,
         ]);
     }
+    
     
     public function actionRequestPasswordReset()
     {
@@ -184,6 +187,7 @@ class DefaultController extends Controller
             'model' => $model,
         ]);
     }
+
 
     public function actionResetPassword($token)
     {
