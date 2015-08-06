@@ -14,7 +14,7 @@ $this->title = 'Login';
         <?= $form->field($model, 'password')->passwordInput() ?>
         <?= $form->field($model, 'rememberMe')->checkbox() ?>
         <div class="form-group">
-            <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+            <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
         </div>
         <div style="color:#999;margin:1em 0">
             If you forgot your password you can <?= Html::a('reset it', ['/user/default/request-password-reset']) ?>.

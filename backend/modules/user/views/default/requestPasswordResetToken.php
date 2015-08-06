@@ -14,7 +14,7 @@ $this->title = 'Request password reset';
         <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
             <?= $form->field($model, 'email') ?>
             <div class="form-group">
-                <?= Html::submitButton('Request password reset', ['class' => 'btn btn-primary btn-block']) ?>
+                <?= Html::submitButton('Request password reset', ['class' => 'btn btn-primary btn-block btn-flat']) ?>
             </div>
             <div style="color:#999;margin:1em 0">
                 <i class="fa fa-long-arrow-left fa-fw"></i> back to <?= Html::a('login page', ['/user/default/login']) ?>.
