@@ -104,7 +104,7 @@ AppAsset::register($this);
               <li><?= Html::a('<i class="fa fa-file"></i>Pages', ['/page/default/index']) ?></li>
               <li><?= Html::a('<i class="fa fa-file-text"></i>News', ['/news/default/index']) ?></li>
               <li><?= Html::a('Banners', ['/banner/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-user"></i>News', ['/user/default/index']) ?></li>
+              <li><?= Html::a('<i class="fa fa-user"></i>Users', ['/user/default/index']) ?></li>
               <!--li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
