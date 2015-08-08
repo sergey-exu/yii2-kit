@@ -8,7 +8,7 @@ installation:
         <li>php yii migration</li>
     </ul>    
         
-site/backend<br/>
+site.com/backend<br/>
         login: test<Br/>
         pass: testtest
     
