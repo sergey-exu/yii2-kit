@@ -101,7 +101,7 @@ AppAsset::register($this);
             <ul class="sidebar-menu">
               <li class="header">Разделы</li>
               <!--li class="active"><a href="#"><span>Link</span></a></li-->
-              <li><?= Html::a('<i class="fa fa-file"></i>Pages', ['/page/default/index']) ?></li>
+              <li><?= Html::a('<i class="fa fa-files-o"></i>Pages', ['/page/default/index']) ?></li>
               <li><?= Html::a('<i class="fa fa-file-text"></i>News', ['/news/default/index']) ?></li>
               <li><?= Html::a('Banners', ['/banner/default/index']) ?></li>
               <li><?= Html::a('<i class="fa fa-user"></i>Users', ['/user/default/index']) ?></li>

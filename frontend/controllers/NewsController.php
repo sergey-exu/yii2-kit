@@ -15,14 +15,12 @@ use yii\web\NotFoundHttpException;
 class NewsController extends Controller
 {
 
-    /**
-     * Lists all News models.
-     * @return mixed
-     */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
             'query' => News::find(),
+            'pagination' => ['pageSize' => 10],
+            'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]],
         ]);
 
         return $this->render('index', [
@@ -30,12 +28,14 @@ class NewsController extends Controller
         ]);
     }
 
+
     public function actionView($alias)
     {
         return $this->render('view', [
             'model' => $this->findModel($alias),
         ]);
     }
+
     
     protected function findModel($alias)
     {
