@@ -4,9 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 
-/* @var $this yii\web\View */
-/* @var $model backend\models\Page */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="box box-primary">
@@ -26,7 +23,7 @@ use vova07\imperavi\Widget;
                 </div>
                 <div class="col-md-4">
                     <?= $form->field($model, 'meta_title')->textInput(['maxlength' => true]) ?>
-                    <?= $form->field($model, 'meta_description')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'meta_description')->textarea(['rows' => 4]) ?>
                     <?= $form->field($model, 'alias')->textInput(['maxlength' => true]) ?>
                 </div>
             </div>
