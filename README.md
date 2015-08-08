@@ -1,11 +1,14 @@
 installation:
     <ul>
-        <li>clone</li>
-        <li>php ini</li>
+        <li>git clone https://github.com/sergey-exu/yii2-kit.git</li>
+        <li>php init</li>
+        <li>composer global require "fxp/composer-asset-plugin:~1.0.0"</li>
+        <li>composer update</li>
+        <li>set db connection on common/config/main-local.php</li>
         <li>php yii migration</li>
-        
+    </ul>    
         
 site/backend<br/>
         login: test<Br/>
         pass: testtest
-    </ul>
+    
