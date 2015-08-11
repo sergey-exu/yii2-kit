@@ -4,6 +4,10 @@ namespace backend\modules\user\controllers;
 
 use yii\web\Controller;
 use Yii;
+use backend\modules\user\models\User; 
+use backend\modules\user\models\UserSearch; 
+use yii\web\NotFoundHttpException;
+
 use backend\modules\user\models\LoginForm;
 use backend\modules\user\models\PasswordResetRequestForm;
 use backend\modules\user\models\ResetPasswordForm;
@@ -11,17 +15,6 @@ use backend\modules\user\models\SignupForm;
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-
-//use yii\base\InvalidParamException;
-//use yii\web\BadRequestHttpException;
-
-
-//-------------------------------------------
-use backend\modules\user\models\User; 
-use yii\data\ActiveDataProvider; 
-use yii\web\NotFoundHttpException;
-//-------------------------------------------
-
 
 
 class DefaultController extends Controller
@@ -49,9 +42,7 @@ class DefaultController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
-                    //---------------------------------------------
                     'delete' => ['post'],
-                    //---------------------------------------------
                 ],
             ],
         ];
@@ -61,52 +52,50 @@ class DefaultController extends Controller
     
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-           'query' => User::find(),
-       ]);
-       
-       return $this->render('index', [
-           'dataProvider' => $dataProvider,
-       ]);
+        $searchModel = new UserSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
     
-    
-    
-    //------------------------------------------------------------------------------------
-    /*
-
     
     public function actionView($id)
     {
-       return $this->render('view', [
-           'model' => $this->findModel($id),
-       ]);
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);
     }
     
+    
     public function actionCreate()
-   {
-       $model = new User();
-       if ($model->load(Yii::$app->request->post()) && $model->save()) {
-           return $this->redirect(['view', 'id' => $model->id]);
-       } else {
-           return $this->render('create', [
-               'model' => $model,
-           ]);
-       }
-   }
-   
+    {
+        $model = new User();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+    
+    
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-           return $this->redirect(['view', 'id' => $model->id]);
-       } else {
-           return $this->render('update', [
-               'model' => $model,
-           ]);
-       }
-    }
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }    
     
     
     public function actionDelete($id)
@@ -123,10 +112,10 @@ class DefaultController extends Controller
        } else {
            throw new NotFoundHttpException('The requested page does not exist.');
        }
-    }
-   */
-    //----------------------------------------------------------------------------------------
+    }    
     
+
+
     
     public function actionLogin()
     {
