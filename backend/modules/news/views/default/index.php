@@ -2,12 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use Yii;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'News';
+$this->title = Yii::t('backend', 'News');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box box-primary">
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     
         <p>
-            <?= Html::a('Create News', ['create'], ['class' => 'btn btn-success']) ?>
+            <?= Html::a(Yii::t('backend', 'Create News'), ['create'], ['class' => 'btn btn-success']) ?>
         </p>
     
         <?= GridView::widget([

@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-
+use Yii;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Page */
 
-$this->title = 'Update Page';
-$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = Yii::t('backend', 'Update Page');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Pages'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="page-update">
 

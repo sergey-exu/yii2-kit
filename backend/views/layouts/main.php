@@ -5,6 +5,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 
+
 /* @var $this \yii\web\View */
 /* @var $content string */
 
@@ -101,10 +102,10 @@ AppAsset::register($this);
             <ul class="sidebar-menu">
               <li class="header">Разделы</li>
               <!--li class="active"><a href="#"><span>Link</span></a></li-->
-              <li><?= Html::a('<i class="fa fa-files-o"></i>Pages', ['/page/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-file-text"></i>News', ['/news/default/index']) ?></li>
-              <li><?= Html::a('Banners', ['/banner/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-user"></i>Users', ['/user/default/index']) ?></li>
+              <li><?= Html::a('<i class="fa fa-files-o"></i>'.Yii::t('backend', 'Pages'), ['/page/default/index']) ?></li>
+              <li><?= Html::a('<i class="fa fa-file-text"></i>'.Yii::t('backend', 'News'), ['/news/default/index']) ?></li>
+              <li><?= Html::a('Banners', ['#']) ?></li>
+              <li><?= Html::a('<i class="fa fa-user"></i>'.Yii::t('backend', 'Users'), ['/user/default/index']) ?></li>
               <!--li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

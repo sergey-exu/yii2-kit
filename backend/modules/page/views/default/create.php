@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-
+use Yii;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Page */
 
-$this->title = 'Create Page';
-$this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
+$this->title = Yii::t('backend', 'Create Page');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Pages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="page-create">

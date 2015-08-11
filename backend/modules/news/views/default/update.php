@@ -1,13 +1,14 @@
 <?php
 
 use yii\helpers\Html;
+use Yii;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\News */
 
-$this->title = 'Update News';
-$this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = Yii::t('backend', 'Update News');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'News'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="news-update">
 

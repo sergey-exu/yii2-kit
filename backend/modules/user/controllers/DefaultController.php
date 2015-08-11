@@ -27,7 +27,7 @@ class DefaultController extends Controller
                 //'only' => ['logout', 'login', 'error'],
                 'rules' => [
                     [
-                        'actions' => ['logout', 'signup', 'index'],
+                        'actions' => ['logout', 'signup', 'index', 'create', 'update', 'view'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
