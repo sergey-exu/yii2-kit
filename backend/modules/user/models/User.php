@@ -3,6 +3,7 @@
 namespace backend\modules\user\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "user".
@@ -19,12 +20,22 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+    public $newPassword;
+    public $newPasswordRepeat;
+    
+    const SCENARIO_USER_CREATE = 'Create';
+    const SCENARIO_USER_UPDATE = 'Update';
+    
     public static function tableName()
     {
         return 'user';
+    }
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
     }
 
     /**
@@ -33,13 +44,20 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'auth_key', 'password_hash', 'email', 'created_at', 'updated_at'], 'required'],
-            [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-            [['auth_key'], 'string', 'max' => 32],
-            [['username'], 'unique'],
-            [['email'], 'unique'],
-            [['password_reset_token'], 'unique']
+            ['username', 'filter', 'filter' => 'trim'],
+            ['username', 'required'],
+            ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
+            ['username', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('backend', 'This username has already been taken.')],
+            ['username', 'string', 'min' => 2, 'max' => 255],
+
+            ['email', 'filter', 'filter' => 'trim'],
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('backend', 'This email address has already been taken.')],
+
+            [['newPassword', 'newPasswordRepeat'], 'required', 'on' => self::SCENARIO_USER_CREATE],
+            ['newPassword', 'string', 'min' => 6],
+            ['newPasswordRepeat', 'compare', 'compareAttribute' => 'newPassword'],
         ];
     }
 
@@ -49,15 +67,32 @@ class User extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('backend', 'ID'),
             'username' => Yii::t('backend', 'Username'),
-            'auth_key' => Yii::t('backend', 'Auth Key'),
-            'password_hash' => Yii::t('backend', 'Password Hash'),
-            'password_reset_token' => Yii::t('backend', 'Password Reset Token'),
             'email' => Yii::t('backend', 'Email'),
             'status' => Yii::t('backend', 'Status'),
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),
         ];
+    }
+    
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if (!empty($this->newPassword)) {
+                $this->setPassword($this->newPassword);
+            }
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
 }
