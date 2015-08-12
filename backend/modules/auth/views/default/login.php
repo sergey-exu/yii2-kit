@@ -17,7 +17,7 @@ $this->title = 'Login';
             <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'login-button']) ?>
         </div>
         <div style="color:#999;margin:1em 0">
-            If you forgot your password you can <?= Html::a('reset it', ['/user/default/request-password-reset']) ?>.
+            If you forgot your password you can <?= Html::a('reset it', ['/auth/default/request-password-reset']) ?>.
         </div>
     <?php ActiveForm::end(); ?>
     
