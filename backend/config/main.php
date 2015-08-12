@@ -12,6 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+        'auth' => ['class' => 'backend\modules\auth\Module'],
         'user' => ['class' => 'backend\modules\user\Module'],
         'news' => ['class' => 'backend\modules\news\Module'],
         'page' => ['class' => 'backend\modules\page\Module'],
@@ -19,9 +20,9 @@ return [
     ],
     'components' => [
         'user' => [
-            'identityClass' => 'backend\modules\user\models\User',
+            'identityClass' => 'backend\modules\auth\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => ['user/default/login'],
+            'loginUrl' => ['auth/default/login'],
         ],
         'i18n' => [
             'translations' => [
@@ -53,14 +54,14 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                /*
-                '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
-                '<_c:[\w\-]+>' => '<_c>/index',
-                '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',*/
+                //'<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
+                //'<_c:[\w\-]+>' => '<_c>/index',
+                //'<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
                 
                 '<_m:[\w\-]+>/' => '<_m>/default/index',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
+                
             ],
         ],
     ],

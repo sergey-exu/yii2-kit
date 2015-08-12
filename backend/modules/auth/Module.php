@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\modules\user;
+namespace backend\modules\auth;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'backend\modules\user\controllers';
+    public $controllerNamespace = 'backend\modules\auth\controllers';
 
     public function init()
     {
@@ -12,4 +12,5 @@ class Module extends \yii\base\Module
 
         // custom initialization code goes here
     }
+    
 }
