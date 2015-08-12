@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use Yii;
+//use Yii;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\NewsSearch */
@@ -31,8 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'title',
                 'summary:ntext',
                 //'text:ntext',
-                // 'updated_at',
-                // 'publish_at',
+                 'updated_at:date',
+                'publish_at:date',
                 // 'meta_title',
                 // 'meta_description',
                 'alias',

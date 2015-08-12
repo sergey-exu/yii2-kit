@@ -45,7 +45,7 @@ class News extends \yii\db\ActiveRecord
         return [
             [['title', 'summary', 'text', 'meta_title', 'meta_description', 'alias'], 'required'],
             [['title', 'meta_title', 'meta_description', 'alias'], 'string'],
-            [['created_at', 'updated_at', 'publish_at'], 'integer'],
+            [['created_at', 'updated_at'], 'integer'],
             ['publish_at', 'default', 'value' => 0], //временно. нужно допилить
             [['alias'], 'unique'],
             [['title'], 'string', 'max' => 256],
@@ -60,15 +60,34 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'summary' => 'Summary',
-            'text' => 'Text',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'publish_at' => 'Publish At',
+            'title' => Yii::t('backend', 'Title'),
+            'summary' => Yii::t('backend', 'Summary'),
+            'text' => Yii::t('backend', 'Text'),
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'publish_at' => Yii::t('backend', 'Publish At'),
             'meta_title' => 'Meta Title',
             'meta_description' => 'Meta Description',
             'alias' => 'Alias',
         ];
+    }
+    
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if (!empty($this->publish_at)) {
+                $this->publish_at = Yii::$app->formatter->asTimestamp($this->publish_at);
+            } else {
+                $this->publish_at = $this->created_at;
+            }
+            return true;
+        }
+        return false;
+    }
+    
+    public function afterFind()
+    {
+        $this->publish_at = Yii::$app->formatter->asDate($this->publish_at, 'dd.MM.yyyy');
+        return true;
     }
 }

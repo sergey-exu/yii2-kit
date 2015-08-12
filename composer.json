@@ -20,6 +20,7 @@
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-jui": "^2.0.0",
         "vova07/yii2-imperavi-widget": "*",
+        "kartik-v/yii2-widget-datepicker": "*",
         "bower-asset/admin-lte": "^2.0",
         "bower-asset/font-awesome": "^4.0"
     },
