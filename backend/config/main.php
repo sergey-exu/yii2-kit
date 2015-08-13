@@ -24,17 +24,6 @@ return [
             'enableAutoLogin' => true,
             'loginUrl' => ['auth/default/login'],
         ],
-        'i18n' => [
-            'translations' => [
-                '*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@app/messages',
-                    'fileMap' => [
-                        'backend' => 'backend.php',
-                    ],
-                ],
-            ],
-        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

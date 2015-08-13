@@ -28,14 +28,21 @@ $this->params['breadcrumbs'][] = $this->title;
     
                 //'id',
                 'created_at:date',
-                'title',
-                'summary:ntext',
-                //'text:ntext',
-                 'updated_at:date',
                 'publish_at:date',
+                'title',
+                //'summary:ntext',
+                //'text:ntext',
+                //'updated_at:date',
                 // 'meta_title',
                 // 'meta_description',
                 'alias',
+                [
+                    'attribute' => 'alias',
+                    'format' => 'raw',
+                    'value' => function ($model, $key, $index, $column) {
+                        return Html::a(Html::encode($model->alias), ['/news', 'alias' => $model->alias]);
+                    }
+                ],
     
                 [
                     'class' => 'yii\grid\ActionColumn',
