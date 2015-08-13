@@ -18,9 +18,9 @@ class NewsController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => News::find(),
+            'query' => News::find()->where('publish_at < ' . Yii::$app->formatter->asTimestamp('now')),
             'pagination' => ['pageSize' => 10],
-            'sort'=> ['defaultOrder' => ['id'=>SORT_DESC]],
+            'sort'=> ['defaultOrder' => ['publish_at'=>SORT_DESC]],
         ]);
 
         return $this->render('index', [
@@ -39,7 +39,7 @@ class NewsController extends Controller
     
     protected function findModel($alias)
     {
-        if (($model = News::find()->where(['alias'=>$alias])->one()) !== null) {
+        if (($model = News::find()->where(['and', ['alias'=>$alias], 'publish_at < ' . Yii::$app->formatter->asTimestamp('now')])->one()) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
