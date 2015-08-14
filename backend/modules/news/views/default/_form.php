@@ -46,15 +46,6 @@ use yii\helpers\Url;
                             ]);
                         ?>
                     </div>
-                    <?= Yii::getAlias('@webroot') ?>
-                    <br/>
-                    <?= Yii::getAlias('@web') ?>
-                    <br/>
-                    <?= Yii::getAlias('@backend') ?>
-                    <Br/>
-                    <?= Yii::getAlias('@frontend') ?>
-                    <Br/>
-                    <?= Yii::getAlias('@app') ?>
                 </div>
             </div>
     
