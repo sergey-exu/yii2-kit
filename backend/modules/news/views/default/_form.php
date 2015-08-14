@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use kartik\date\DatePicker;
+use yii\helpers\Url;
 
 ?>
 
@@ -20,7 +21,8 @@ use kartik\date\DatePicker;
                             'settings' => [
                                 'lang' => 'ru',
                                 'replaceDivs' => false,
-                                'minHeight' => 400
+                                'minHeight' => 400,
+                                'imageUpload' => Url::to(['/news/image-upload'])
                             ]
                         ]);
                     ?>
@@ -54,3 +56,6 @@ use kartik\date\DatePicker;
         <?php ActiveForm::end(); ?>
     </div>
 </div>
+
+
+<?= Yii::getAlias('@webroot') ?>

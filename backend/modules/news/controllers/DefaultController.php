@@ -7,7 +7,7 @@ use backend\modules\news\models\News;
 use backend\modules\news\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\AccessControl;
+//use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 class DefaultController extends Controller
@@ -15,7 +15,7 @@ class DefaultController extends Controller
     
     public function behaviors()
     {
-        return [
+        return [/*
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['index', 'create', 'update', 'delete'],
@@ -31,7 +31,7 @@ class DefaultController extends Controller
                 'actions' => [
                     'delete' => ['post'],
                 ],
-            ],
+            ],*/
         ];
     }
     
@@ -114,5 +114,14 @@ public function actionIndex()
         }
     }
     
-    
+    public function actions()
+    {
+        return [
+            'image-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+                //'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
+                'path' => '@webroot' // Or absolute path to directory where files are stored.
+            ],
+        ];
+    }
 }
