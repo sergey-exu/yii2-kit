@@ -127,6 +127,11 @@ class DefaultController extends Controller
                 'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
                 'path' => '@frontend/web/images' // Or absolute path to directory where files are stored.
             ],
+            'file-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+                'url' => 'https://kit-sergey-exu.c9.io/files/', // Directory URL address, where files are stored.
+                'path' => '@frontend/web/doc' // Or absolute path to directory where files are stored.
+            ],
         ];
     }
 }

@@ -19,7 +19,8 @@ use yii\helpers\Url;
                                 'lang' => 'ru',
                                 'replaceDivs' => false,
                                 'minHeight' => 400,
-                                'imageUpload' => Url::to(['/page/default/image-upload'])
+                                'imageUpload' => Url::to(['/page/default/image-upload']),
+                                'fileUpload' => Url::to(['/page/default/file-upload'])
                             ]
                         ]);
                     ?>
