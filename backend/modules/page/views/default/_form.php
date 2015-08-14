@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
-use Yii;
+use yii\helpers\Url;
 
 ?>
 
@@ -18,7 +18,8 @@ use Yii;
                             'settings' => [
                                 'lang' => 'ru',
                                 'replaceDivs' => false,
-                                'minHeight' => 400
+                                'minHeight' => 400,
+                                'imageUpload' => Url::to(['/page/default/image-upload'])
                             ]
                         ]);
                     ?>

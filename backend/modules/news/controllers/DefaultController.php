@@ -7,7 +7,7 @@ use backend\modules\news\models\News;
 use backend\modules\news\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-//use yii\filters\AccessControl;
+use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
 class DefaultController extends Controller
@@ -15,7 +15,7 @@ class DefaultController extends Controller
     
     public function behaviors()
     {
-        return [/*
+        return [
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['index', 'create', 'update', 'delete'],
@@ -31,7 +31,7 @@ class DefaultController extends Controller
                 'actions' => [
                     'delete' => ['post'],
                 ],
-            ],*/
+            ],
         ];
     }
     

@@ -118,4 +118,15 @@ class DefaultController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actions()
+    {
+        return [
+            'image-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+                'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
+                'path' => '@frontend/web/images' // Or absolute path to directory where files are stored.
+            ],
+        ];
+    }
 }
