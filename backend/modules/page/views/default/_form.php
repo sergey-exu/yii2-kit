@@ -17,6 +17,7 @@ use Yii;
                         echo $form->field($model, 'page_content')->widget(Widget::className(), [
                             'settings' => [
                                 'lang' => 'ru',
+                                'replaceDivs' => false,
                                 'minHeight' => 400
                             ]
                         ]);

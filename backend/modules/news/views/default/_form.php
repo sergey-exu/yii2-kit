@@ -19,6 +19,7 @@ use kartik\date\DatePicker;
                         echo $form->field($model, 'text')->widget(Widget::className(), [
                             'settings' => [
                                 'lang' => 'ru',
+                                'replaceDivs' => false,
                                 'minHeight' => 400
                             ]
                         ]);
