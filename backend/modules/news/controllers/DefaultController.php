@@ -120,7 +120,11 @@ public function actionIndex()
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
                 'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
-                'path' => '@frontend/web/images' // Or absolute path to directory where files are stored.
+                'path' => '@frontend/web/images', // Or absolute path to directory where files are stored.
+                'validatorOptions' => [
+                    'maxWidth' => 1000,
+                    'maxHeight' => 1000
+                ]
             ],
         ];
     }
