@@ -59,13 +59,13 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'page_title' => 'Page Title',
-            'page_content' => 'Page Content',
-            'meta_title' => 'Meta Title',
-            'meta_description' => 'Meta Description',
-            'alias' => 'Alias',
+            'created_at' => Yii::t('backend', 'Created At'),
+            'updated_at' => Yii::t('backend', 'Updated At'),
+            'page_title' => Yii::t('backend', 'Title'),
+            'page_content' => Yii::t('backend', 'Text'),
+            'meta_title' => Yii::t('backend', 'Meta Title'),
+            'meta_description' => Yii::t('backend', 'Meta Description'),
+            'alias' => Yii::t('backend', 'Alias'),
         ];
     }
 }

@@ -29,19 +29,20 @@ use kartik\date\DatePicker;
                     <?= $form->field($model, 'meta_title')->textInput() ?>
                     <?= $form->field($model, 'meta_description')->textarea(['rows' => 4]) ?>
                     <?= $form->field($model, 'alias')->textInput(['maxlength' => true]) ?>
-                    <?php
-                        echo '<label class="control-label">'. Yii::t('backend', 'Publish date') .'</label>';
-                        echo DatePicker::widget([
-                            'model' => $model, 
-                            'attribute' => 'publish_at',
-                            //'value' => date('d-M-Y'),
-                            //'options' => ['placeholder' => Yii::t('backend', 'Publish date')],
-                            'pluginOptions' => [
-                                'autoclose'=>true,
-                                'todayHighlight' => true,
-                            ]
-                        ]);
-                    ?>
+                    <div class="form-group">
+                        <?php
+                            echo '<label class="control-label">'. Yii::t('backend', 'Publish date') .'</label>';
+                            echo DatePicker::widget([
+                                'model' => $model, 
+                                'attribute' => 'publish_at',
+                                'options' => ['placeholder' => Yii::$app->formatter->asDate('now', 'dd.MM.yyyy')],
+                                'pluginOptions' => [
+                                    'autoclose'=>true,
+                                    'todayHighlight' => true,
+                                ]
+                            ]);
+                        ?>
+                    </div>
                 </div>
             </div>
     
