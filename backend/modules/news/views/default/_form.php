@@ -22,7 +22,7 @@ use yii\helpers\Url;
                                 'lang' => 'ru',
                                 'replaceDivs' => false,
                                 'minHeight' => 400,
-                                'imageUpload' => Url::to(['/news/image-upload'])
+                                'imageUpload' => Url::to(['/news/default/image-upload'])
                             ]
                         ]);
                     ?>
@@ -46,6 +46,15 @@ use yii\helpers\Url;
                             ]);
                         ?>
                     </div>
+                    <?= Yii::getAlias('@webroot') ?>
+                    <br/>
+                    <?= Yii::getAlias('@web') ?>
+                    <br/>
+                    <?= Yii::getAlias('@backend') ?>
+                    <Br/>
+                    <?= Yii::getAlias('@frontend') ?>
+                    <Br/>
+                    <?= Yii::getAlias('@app') ?>
                 </div>
             </div>
     
@@ -58,4 +67,3 @@ use yii\helpers\Url;
 </div>
 
 
-<?= Yii::getAlias('@webroot') ?>
