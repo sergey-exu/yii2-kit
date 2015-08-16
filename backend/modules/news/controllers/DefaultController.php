@@ -126,6 +126,15 @@ public function actionIndex()
                     'maxHeight' => 1000
                 ]
             ],
+            'file-upload' => [
+                'class' => 'vova07\imperavi\actions\UploadAction',
+                'url' => 'https://kit-sergey-exu.c9.io/doc/', // Directory URL address, where files are stored.
+                'path' => '@frontend/web/doc', // Or absolute path to directory where files are stored.
+                'uploadOnlyImage' => false,
+                'validatorOptions' => [
+                    'maxSize' => 1000000 //1Mb
+                ]
+            ],
         ];
     }
 }
