@@ -36,19 +36,13 @@ return [
             'showScriptName' => false,
             'rules' => [
                 
-                '' => 'site/index',
-                
+                '' => 'page/index',
                 'news/' => 'news/index',
                 'news/<alias:[\w\-]+>' => 'news/view',
-                
-                '<action:sections>/<id:\d+>' => 'site/<action>',
-                
-                //'partners/' => 'partners/index',
-                
                 '<alias:[\w\-]+>' => 'page/view',
                 
-                
-                
+                //'<action:sections>/<id:\d+>' => 'site/<action>',
+                //'partners/' => 'partners/index',
                 
                 //'<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/<_a>',
                 //'<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',

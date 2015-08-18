@@ -16,13 +16,22 @@ class PageController extends Controller
 {
     //public $layout = 'column2';
     
+    public function actionIndex()
+    {
+        $model = Page::find()->where(['alias'=>'main'])->one();
+        
+        if(!$model){
+            throw new NotFoundHttpException(\Yii::t('frontend', 'Page not found'));
+        }
+        return $this->render('index', ['model'=>$model]);
+    }
+    
     public function actionView($alias)
     {
         $model = Page::find()->where(['alias'=>$alias])->one();
         
         if(!$model){
-            //throw new NotFoundHttpException(\Yii::t('frontend', 'Page not found'));
-            throw new NotFoundHttpException('Page not found');
+            throw new NotFoundHttpException(\Yii::t('frontend', 'Page not found'));
         }
         return $this->render('view', ['model'=>$model]);
     }
