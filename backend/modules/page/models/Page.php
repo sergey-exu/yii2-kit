@@ -62,7 +62,7 @@ class Page extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),
             'page_title' => Yii::t('backend', 'Title'),
-            'page_content' => Yii::t('backend', 'Text'),
+            'page_content' => Yii::t('backend', 'Page Content'),
             'meta_title' => Yii::t('backend', 'Meta Title'),
             'meta_description' => Yii::t('backend', 'Meta Description'),
             'alias' => Yii::t('backend', 'Alias'),

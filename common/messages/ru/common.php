@@ -17,10 +17,17 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Description' => 'Описание',
+    'Images' => 'Изображение',
+    'Link' => 'Ссылка',
+    'Name' => 'Имя',
+    'Partner' => 'Партнер',
+    'Status' => 'Статус',
+    'Support' => 'Поддержка',
     'Login' => 'Войти',
+    'Logout' => 'Выйти',
+    'Page not found' => 'Страница не найдена',
     'Password' => 'Пароль',
     'Remember Me' => 'Запомнить меня',
     'Username' => 'Имя пользователя',
-    'Logout' => 'Выйти',
-    'Page not found' => 'Страница не найдена',
 ];

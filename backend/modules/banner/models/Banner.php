@@ -14,7 +14,7 @@ use yii\web\UploadedFile;
  * @property string $link
  * @property string $status
  * @property string $img
- * @property string $content
+ * @property string description
  * @property integer $type
  */
 class Banner extends \yii\db\ActiveRecord
@@ -36,9 +36,9 @@ class Banner extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'content', 'type'], 'required'],
+            [['name','type'], 'required'],
             [['type'], 'integer'],
-            [['content'], 'string'],
+            [['description'], 'string'],
             [['name'], 'string', 'max' => 56],
             [['link'], 'string', 'max' => 512],
             [['status'], 'string', 'max' => 256],
@@ -54,12 +54,12 @@ class Banner extends \yii\db\ActiveRecord
             
             if($file = UploadedFile::getInstance($this, 'img'))
             {
-                $imgPath= Yii::getAlias('@frontend/web/img/partner/') . $this->img;
+                $imgPath= Yii::getAlias('@frontend/web/images/') . $this->img;
                 if(is_file($imgPath)) 
                     unlink($imgPath);
                     
                 $imgName = Yii::$app->getSecurity()->generateRandomString('8') . '.' . $file->extension;
-                $file->saveAs(Yii::getAlias('@frontend/web/img/partner/') . $imgName);
+                $file->saveAs(Yii::getAlias('@frontend/web/images/') . $imgName);
                 $this->img =  $imgName;
             }
             
@@ -75,7 +75,7 @@ class Banner extends \yii\db\ActiveRecord
     {
         if (parent::beforeDelete()) {
             
-            $imgPath= Yii::getAlias('@frontend/web/img/partner/') . $this->img;
+            $imgPath= Yii::getAlias('@frontend/web/images/') . $this->img;
             if(is_file($imgPath)) 
                 unlink($imgPath);
             
@@ -86,25 +86,15 @@ class Banner extends \yii\db\ActiveRecord
     }
     
     
-    private function deleteBanner()
-    {
-        
-    }
-    
-
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'link' => 'Link',
-            'status' => 'Status',
-            'img' => 'Img',
-            'content' => 'Content',
-            'type' => 'Type',
+            'name' => Yii::t('common' ,'Name'),
+            'link' => Yii::t('common' ,'Link'),
+            'status' => Yii::t('common' ,'Status'),
+            'img' => Yii::t('common' ,'Images'),
+            'description' => Yii::t('common' ,'Description'),
+            'type' => Yii::t('backend' ,'Type'),
         ];
     }
 }

@@ -2,9 +2,9 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Update Banner';
+$this->title = Yii::t('backend', 'Update Banner');
 $this->params['breadcrumbs'][] = ['label' => 'Banners', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="banner-update">
 

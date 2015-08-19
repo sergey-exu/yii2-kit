@@ -19,7 +19,7 @@ class BannerSearch extends Banner
     {
         return [
             [['id', 'img', 'type'], 'integer'],
-            [['name', 'link', 'status', 'content'], 'safe'],
+            [['name', 'link', 'status', 'description'], 'safe'],
         ];
     }
 
@@ -67,7 +67,7 @@ class BannerSearch extends Banner
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'link', $this->link])
             ->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'content', $this->content]);
+            ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
     }

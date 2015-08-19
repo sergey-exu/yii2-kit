@@ -17,11 +17,14 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Email' => '',
-    'Meta Description' => '',
-    'Meta Title' => '',
+    'Email' => 'Email',
+    'Meta Description' => 'Мата Описание',
+    'Meta Title' => 'Мета Заголовок',
+    'Update Banner' => 'Обновить баннер',
     'Alias' => 'ЧПУ',
+    'Banners' => 'Баннеры',
     'Create' => 'Создать',
+    'Create Banner' => 'Создать баннер',
     'Create News' => 'Создать новость',
     'Create Page' => 'Создать страницу',
     'Create User' => 'Создать пользователя',
@@ -39,6 +42,7 @@ return [
     'This email address has already been taken.' => 'Этот email адрес уже используется',
     'This username has already been taken.' => 'Это имя пользователя уже занято',
     'Title' => 'Заголовок',
+    'Type' => 'Тип',
     'Update' => 'Обновить',
     'Update News' => 'Обновить новость',
     'Update Page' => 'Обновить страницу',

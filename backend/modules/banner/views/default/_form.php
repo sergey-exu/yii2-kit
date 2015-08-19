@@ -15,15 +15,15 @@ use backend\modules\banner\models\Banner;
         <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
         
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-4 col-md-6">
     
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
             
                 <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
                 
                 <?php echo $form->field($model, 'type')->dropDownlist([
-                    Banner::BANNER_PARTNER => 'Партнер',
-                    Banner::BANNER_SUPPORT => 'Поддержка'
+                    Banner::BANNER_PARTNER => Yii::t('common', 'Partner'),
+                    Banner::BANNER_SUPPORT => Yii::t('common', 'Support')
                     ]);
             	?>
             
@@ -31,18 +31,18 @@ use backend\modules\banner\models\Banner;
             
                 <?= $form->field($model, 'img')->fileInput() ?>
                 
-                <?php if(!$model->isNewRecord) : ?>
+                <?php /*if(!$model->isNewRecord) : ?>
                     <img src="http://myhome23.ru/img/partner/<?= $model->img ?>" />
-                <?php endif; ?>
+                <?php endif; */?>
             
-                <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+                <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
             
             </div>
         </div>
         
     
         <div class="form-group">
-            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
     
         <?php ActiveForm::end(); ?>
