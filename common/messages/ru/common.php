@@ -17,6 +17,10 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Login' => 'Войти',
+    'Password' => 'Пароль',
+    'Remember Me' => 'Запомнить меня',
+    'Username' => 'Имя пользователя',
     'Logout' => 'Выйти',
     'Page not found' => 'Страница не найдена',
 ];
