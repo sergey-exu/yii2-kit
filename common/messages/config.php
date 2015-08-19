@@ -2,7 +2,8 @@
 
 return [
     // string, required, root directory of all source files
-    'sourcePath' => __DIR__ . DIRECTORY_SEPARATOR . '..',
+    //'sourcePath' => __DIR__ . DIRECTORY_SEPARATOR . '..',
+    'sourcePath' => __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..',
     // array, required, list of language codes that the extracted messages
     // should be translated to. For example, ['zh-CN', 'de'].
     'languages' => ['ru'],
@@ -39,6 +40,11 @@ return [
         '.hgignore',
         '.hgkeep',
         '/messages',
+        '/vendor',
+        '/tests',
+        '/environments',
+        '/console',
+        '.c9',
     ],
 
     // 'php' output format is for saving messages to php files.
