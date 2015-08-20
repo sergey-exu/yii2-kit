@@ -31,9 +31,9 @@ use backend\modules\banner\models\Banner;
             
                 <?= $form->field($model, 'img')->fileInput() ?>
                 
-                <?php /*if(!$model->isNewRecord) : ?>
-                    <img src="http://myhome23.ru/img/partner/<?= $model->img ?>" />
-                <?php endif; */?>
+                <?php if(!$model->isNewRecord) : ?>
+                    <img src="<?= Yii::$app->params['domainName'] . '/images/' . $model->img ?>" />
+                <?php endif; ?>
             
                 <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
             

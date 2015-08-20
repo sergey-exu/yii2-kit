@@ -119,7 +119,8 @@ public function actionIndex()
         return [
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
+                //'url' => 'https://kit-sergey-exu.c9.io/images/', // Directory URL address, where files are stored.
+                'url' => Yii::$app->params['domainName'] . '/images/',
                 'path' => '@frontend/web/images', // Or absolute path to directory where files are stored.
                 'validatorOptions' => [
                     'maxWidth' => 1000,

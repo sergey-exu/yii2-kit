@@ -5,7 +5,14 @@ installation:
         <li>composer global require "fxp/composer-asset-plugin:~1.0.0"</li>
         <li>composer update</li>
         <li>set db connection in common/config/main-local.php</li>
+        <li>
+            set param in common/config/param-local.php
+            <ul>
+                <li>'domainName' => 'your full domain name'</li>
+            </ul>
+        </li>
         <li>php yii migration</li>
+        
     </ul>    
         
 site.com/backend<br/>
