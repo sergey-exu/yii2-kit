@@ -12,7 +12,6 @@ installation:
             </ul>
         </li>
         <li>php yii migration</li>
-        
     </ul>    
         
 site.com/backend<br/>
