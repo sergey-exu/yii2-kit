@@ -17,10 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Email' => 'Email',
-    'Meta Description' => 'Мата Описание',
-    'Meta Title' => 'Мета Заголовок',
-    'Update Banner' => 'Обновить баннер',
+    'Page Content' => 'Текст страницы',
     'Alias' => 'ЧПУ',
     'Banners' => 'Баннеры',
     'Create' => 'Создать',
@@ -29,7 +26,10 @@ return [
     'Create Page' => 'Создать страницу',
     'Create User' => 'Создать пользователя',
     'Created At' => 'Создано',
+    'Email' => 'Email',
     'Incorrect username or password.' => 'Неверное имя пользователя или пароль',
+    'Meta Description' => 'Мата Описание',
+    'Meta Title' => 'Мета Заголовок',
     'News' => 'Новости',
     'Pages' => 'Страницы',
     'Publish At' => 'Опубликованно',
@@ -44,6 +44,7 @@ return [
     'Title' => 'Заголовок',
     'Type' => 'Тип',
     'Update' => 'Обновить',
+    'Update Banner' => 'Обновить баннер',
     'Update News' => 'Обновить новость',
     'Update Page' => 'Обновить страницу',
     'Update {modelClass}: ' => 'Обновить {modelClass}: ',

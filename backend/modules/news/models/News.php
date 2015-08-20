@@ -66,8 +66,8 @@ class News extends \yii\db\ActiveRecord
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),
             'publish_at' => Yii::t('backend', 'Publish At'),
-            'meta_title' => 'Meta Title',
-            'meta_description' => 'Meta Description',
+            'meta_title' => Yii::t('backend', 'Meta Title'),
+            'meta_description' => Yii::t('backend', 'Meta Description'),
             'alias' => Yii::t('backend', 'Alias'),
         ];
     }
