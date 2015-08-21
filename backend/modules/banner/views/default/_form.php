@@ -16,30 +16,17 @@ use backend\modules\banner\models\Banner;
         
         <div class="row">
             <div class="col-lg-4 col-md-6">
-    
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-            
                 <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
-                
-                <?php echo $form->field($model, 'type')->dropDownlist([
-                    Banner::BANNER_PARTNER => Yii::t('common', 'Partner'),
-                    Banner::BANNER_SUPPORT => Yii::t('common', 'Support')
-                    ]);
-            	?>
-            
+                <?= $form->field($model, 'type')->dropDownlist(Banner::getTypeArray()) ?>
                 <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
-            
                 <?= $form->field($model, 'img')->fileInput() ?>
-                
                 <?php if(!$model->isNewRecord) : ?>
                     <img src="<?= Yii::$app->params['domainName'] . '/images/' . $model->img ?>" />
                 <?php endif; ?>
-            
                 <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
-            
             </div>
         </div>
-        
     
         <div class="form-group">
             <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

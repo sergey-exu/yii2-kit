@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\modules\banner\models\Banner;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\modules\banner\models\BannerSearch */
@@ -25,14 +26,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
     
-                //'id',
                 'name',
-                'link',
-                //'img',
+                [
+                    'attribute' => 'img',
+                    'format' => 'raw',
+                    'value' => function ($model, $key, $index, $column) {
+                        return Html::img(Yii::$app->params['domainName'] . '/images/' . $model->img, ['width' => '130px']);
+                    }
+                ],
+                //'link',
                 'status',
-                'description:ntext',
-                'type',
-    
+                //'description:ntext',
+                [
+                    'attribute' => 'type',
+                    'filter' => Banner::getTypeArray(),
+                    /*
+                    'value' => function ($model, $key, $index, $column) {
+                        return $model->getTypeName();
+                    }
+                    */
+                    'value' => 'TypeName', //тоже самое что и код выше
+                ],
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template'=>'{update} {delete}'

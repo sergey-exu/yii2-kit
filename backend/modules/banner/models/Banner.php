@@ -5,6 +5,7 @@ namespace backend\modules\banner\models;
 use Yii;
 use yii\db\ActiveRecord;
 use yii\web\UploadedFile;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "banner".
@@ -46,7 +47,21 @@ class Banner extends \yii\db\ActiveRecord
         ];
     }
     
+    
+    public static function getTypeArray()
+    {
+        return [
+            self::BANNER_PARTNER => Yii::t('common', 'Partner'),
+            self::BANNER_SUPPORT => Yii::t('common', 'Support'),
+        ];
+    }
+    
+    public function getTypeName()
+    {
+        return ArrayHelper::getValue(self::getTypeArray(), $this->type);
+    }
 
+    
     
     public function beforeSave($insert)
     {
