@@ -37,7 +37,26 @@ $this->params['breadcrumbs'][] = $this->title;
     
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template'=>'{update} {delete}'
+                    'template'=>'{update} {delete}',
+                    'contentOptions' => ['class' => 'actionColumn'],
+                    'buttonOptions' => [
+                        'class' => 'btn btn-xs btn-default'
+                    ],
+                    /*
+                    'buttons' => [
+                        'delete' => function ($url, $model, $key) {
+                            $options = array_merge([
+                                'title' => Yii::t('yii', 'Delete'),
+                                'aria-label' => Yii::t('yii', 'Delete'),
+                                'data-confirm' => Yii::t('yii', 'Are you sure you want to delete this item?'),
+                                'data-method' => 'post',
+                                'data-pjax' => '0',
+                                'class' => 'btn-danger',
+                            ], $this->buttonOptions);
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', $url, $options);
+                        },
+                    ],
+                    */
                 ],
             ],
         ]); ?>
