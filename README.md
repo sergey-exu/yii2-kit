@@ -9,6 +9,7 @@ installation:
             set param in common/config/param-local.php
             <ul>
                 <li>'domainName' => 'your full domain name'</li>
+                <li>'gaTrackingId' => trackingId', //Google Analitics Tracking Id</li>
             </ul>
         </li>
         <li>php yii migration</li>

@@ -5,6 +5,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use frontend\widgets\Alert;
+use frontend\widgets\GoogleAnalytics;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -62,6 +63,8 @@ AppAsset::register($this);
     </footer>
 
     <?php $this->endBody() ?>
+    
+    <?= GoogleAnalytics::widget(['trackingId' => Yii::$app->params['gaTrackingId']]); ?>
 </body>
 </html>
 <?php $this->endPage() ?>
