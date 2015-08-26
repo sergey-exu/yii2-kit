@@ -21,6 +21,7 @@
         "yiisoft/yii2-jui": "^2.0.0",
         "vova07/yii2-imperavi-widget": "*",
         "kartik-v/yii2-widget-datepicker": "*",
+        "kartik-v/yii2-widget-growl": "*",
         "bower-asset/admin-lte": "^2.0",
         "bower-asset/font-awesome": "^4.0"
     },

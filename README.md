@@ -12,7 +12,7 @@ installation:
                 <li>'gaTrackingId' => trackingId', //Google Analitics Tracking Id</li>
             </ul>
         </li>
-        <li>php yii migration</li>
+        <li>php yii migrate</li>
     </ul>    
         
 site.com/backend<br/>

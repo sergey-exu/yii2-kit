@@ -28,7 +28,7 @@ return [
     'Created At' => 'Создано',
     'Email' => 'Email',
     'Incorrect username or password.' => 'Неверное имя пользователя или пароль',
-    'Meta Description' => 'Мата Описание',
+    'Meta Description' => 'Мета Описание',
     'Meta Title' => 'Мета Заголовок',
     'News' => 'Новости',
     'Pages' => 'Страницы',

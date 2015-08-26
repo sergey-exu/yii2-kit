@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use kartik\growl\Growl;
+//use yii\helpers\ArrayHelper;
 
 
 /* @var $this \yii\web\View */
@@ -136,12 +138,12 @@ AppAsset::register($this);
 
             <!-- Main content -->
             <section class="content">
-                <?php if (Yii::$app->session->hasFlash('alert')):?>
+                <?php /*if (Yii::$app->session->hasFlash('alert')):?>
                     <?php echo \yii\bootstrap\Alert::widget([
                         'body'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'body'),
                         'options'=>ArrayHelper::getValue(Yii::$app->session->getFlash('alert'), 'options'),
                     ])?>
-                <?php endif; ?>
+                <?php endif; */?>
                 
                 <?= $content ?>
                 
@@ -150,6 +152,32 @@ AppAsset::register($this);
 
 
     </div>
+    
+    
+    
+    
+    <?php 
+      //yii2 widget growl from krajee
+      foreach (Yii::$app->session->getAllFlashes() as $message):; ?>
+            <?php
+            echo Growl::widget([
+                'type' => (!empty($message['type'])) ? $message['type'] : 'danger',
+                'title' => (!empty($message['title'])) ? Html::encode($message['title']) : 'Title Not Set!',
+                'icon' => (!empty($message['icon'])) ? $message['icon'] : 'fa fa-info',
+                'body' => (!empty($message['message'])) ? Html::encode($message['message']) : 'Message Not Set!',
+                'showSeparator' => true,
+                'delay' => 1, //This delay is how long before the message shows
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'delay' => (!empty($message['duration'])) ? $message['duration'] : 3000, //This delay is how long the message shows for
+                    'placement' => [
+                        'from' => (!empty($message['positonY'])) ? $message['positonY'] : 'top',
+                        'align' => (!empty($message['positonX'])) ? $message['positonX'] : 'right',
+                    ]
+                ]
+            ]);
+            ?>
+        <?php endforeach; ?>
 
 
     <?php $this->endBody() ?>

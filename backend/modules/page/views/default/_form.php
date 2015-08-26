@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use yii\helpers\Url;
-
 ?>
 
 <div class="box box-primary">
