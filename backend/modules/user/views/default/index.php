@@ -40,7 +40,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'template'=>'{update} {delete}',
                     'contentOptions' => ['class' => 'actionColumn'],
                     'buttonOptions' => [
-                        'class' => 'btn btn-xs btn-default'
+                        'class' => 'btn btn-sm btn-default',
+                        'style' => 'padding:1px 10px;',
                     ],
                 ],
             ],
