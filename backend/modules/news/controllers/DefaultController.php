@@ -84,7 +84,6 @@ public function actionIndex()
                 'message' => 'Информация сохранена успешно',
                 'positonY' => 'top',
                 'positonX' => 'right',
-                
              ]);
              
             return $this->render('update', [
