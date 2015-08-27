@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ListView;
 
-$this->title = 'News';
+$this->title = Yii::t('common', 'News');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">

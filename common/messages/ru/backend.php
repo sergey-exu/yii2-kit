@@ -30,7 +30,6 @@ return [
     'Incorrect username or password.' => 'Неверное имя пользователя или пароль',
     'Meta Description' => 'Мета Описание',
     'Meta Title' => 'Мета Заголовок',
-    'News' => 'Новости',
     'Pages' => 'Страницы',
     'Publish At' => 'Опубликованно',
     'Publish date' => 'Дата публикации',

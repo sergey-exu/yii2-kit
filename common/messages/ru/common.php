@@ -24,6 +24,7 @@ return [
     'Partner' => 'Партнер',
     'Status' => 'Статус',
     'Support' => 'Поддержка',
+    'News' => 'Новости',
     'Login' => 'Войти',
     'Logout' => 'Выйти',
     'Page not found' => 'Страница не найдена',
