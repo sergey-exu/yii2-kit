@@ -23,7 +23,7 @@ use yii\helpers\Url;
                                 'replaceDivs' => false,
                                 'minHeight' => 400,
                                 'imageUpload' => Url::to(['/news/default/image-upload']),
-                                'fileUpload' => Url::to(['/page/default/file-upload'])
+                                'fileUpload' => Url::to(['/news/default/file-upload'])
                             ]
                         ]);
                     ?>
