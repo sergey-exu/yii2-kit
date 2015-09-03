@@ -44,10 +44,10 @@ AppAsset::register($this);
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
-              <!--ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li>
-                <li class="dropdown">
+              <ul class="nav navbar-nav">
+                <!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li-->
+                <li><?= HTML::a('Перейти на сайт', Yii::$app->params['domainName'], ['target' => '_blank']) ?></li>
+                <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="#">Action</a></li>
@@ -58,9 +58,9 @@ AppAsset::register($this);
                     <li class="divider"></li>
                     <li><a href="#">One more separated link</a></li>
                   </ul>
-                </li>
+                </li-->
               </ul>
-              <form class="navbar-form navbar-left" role="search">
+              <!--form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
                   <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
                 </div>
