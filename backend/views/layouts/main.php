@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 use kartik\growl\Growl;
 //use yii\helpers\ArrayHelper;
 
@@ -101,21 +102,40 @@ AppAsset::register($this);
             
         
             <!-- Sidebar Menu -->
-            <ul class="sidebar-menu">
+            <!--ul class="sidebar-menu">
               <li class="header">Разделы</li>
-              <!--li class="active"><a href="#"><span>Link</span></a></li-->
-              <li><?= Html::a('<i class="fa fa-files-o"></i>' . Yii::t('backend', 'Pages'), ['/page/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-list"></i>' . Yii::t('backend', 'News'), ['/news/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-cube"></i>' . Yii::t('backend', 'Banners'), ['/banner/default/index']) ?></li>
-              <li><?= Html::a('<i class="fa fa-user"></i>' . Yii::t('backend', 'Users'), ['/user/default/index']) ?></li>
-              <!--li class="treeview">
+              <li class="active"><a href="#"><span>Link</span></a></li>
+              <li class="treeview">
                 <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                   <li><a href="#">Link in level 2</a></li>
                   <li><a href="#">Link in level 2</a></li>
                 </ul>
-              </li-->
+              </li>
             </ul><!-- /.sidebar-menu -->
+            
+            
+            
+            <?php
+            
+            echo Menu::widget([
+                'options' => ['class' => 'sidebar-menu'],
+                'encodeLabels' => false,
+                'items' => [
+                    ['label' => 'Разделы', 'options' => ['class' => 'header']],
+                    ['label' => '<i class="fa fa-files-o"></i>' . Yii::t('backend', 'Pages'), 'url' => ['/page/default/index']],
+                    ['label' => '<i class="fa fa-list"></i>' . Yii::t('backend', 'News'), 'url' => ['/news/default/index']],
+                    ['label' => '<i class="fa fa-cube"></i>' . Yii::t('backend', 'Banners'), 'url' => ['/banner/default/index']],
+                    ['label' => '<i class="fa fa-user"></i>' . Yii::t('backend', 'Users'), 'url' => ['/user/default/index']],
+                    /*['label' => 'Products', 'url' => ['product/index'], 'items' => [
+                        ['label' => 'New Arrivals', 'url' => ['product/index', 'tag' => 'new']],
+                        ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
+                    ]],*/
+                    //['label' => 'Login', 'url' => ['site/login'], 'visible' => !Yii::$app->user->isGuest],
+                ],
+            ]);
+            
+            ?>
         
           </div><!-- /.sidebar -->
         </div><!-- /.main-sidebar -->
