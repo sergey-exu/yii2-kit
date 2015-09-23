@@ -51,8 +51,8 @@ class Banner extends \yii\db\ActiveRecord
     public static function getTypeArray()
     {
         return [
-            self::BANNER_PARTNER => Yii::t('common', 'Partner'),
-            self::BANNER_SUPPORT => Yii::t('common', 'Support'),
+            self::BANNER_PARTNER => Yii::t('backend', 'Partner'),
+            self::BANNER_SUPPORT => Yii::t('backend', 'Support'),
         ];
     }
     
@@ -104,11 +104,11 @@ class Banner extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'name' => Yii::t('common' ,'Name'),
-            'link' => Yii::t('common' ,'Link'),
-            'status' => Yii::t('common' ,'Status'),
-            'img' => Yii::t('common' ,'Images'),
-            'description' => Yii::t('common' ,'Description'),
+            'name' => Yii::t('backend' ,'Name'),
+            'link' => Yii::t('backend' ,'Link'),
+            'status' => Yii::t('backend' ,'Status'),
+            'img' => Yii::t('backend' ,'Images'),
+            'description' => Yii::t('backend' ,'Description'),
             'type' => Yii::t('backend' ,'Type'),
         ];
     }

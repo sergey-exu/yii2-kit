@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use yii\widgets\Menu;
+use backend\widgets\Menu;
 use kartik\growl\Growl;
 //use yii\helpers\ArrayHelper;
 
@@ -67,7 +67,7 @@ AppAsset::register($this);
                 </div>
               </form-->
               <ul class="nav navbar-nav navbar-right">
-                <li><?= Html::a(Yii::t('common', 'Logout') . ' ('.Yii::$app->user->identity->username.')', ['/auth/default/logout'], ['data-method' => 'post']) ?></li>
+                <li><?= Html::a(Yii::t('backend', 'Logout') . ' ('.Yii::$app->user->identity->username.')', ['/auth/default/logout'], ['data-method' => 'post']) ?></li>
                 <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -116,22 +116,53 @@ AppAsset::register($this);
             
             
             
-            <?php
-            
-            echo Menu::widget([
-                'options' => ['class' => 'sidebar-menu'],
+            <?php echo Menu::widget([
+                'options'=>['class'=>'sidebar-menu'],
+                'linkTemplate' => '<a href="{url}">{icon}<span>{label}</span>{right-icon}{badge}</a>',
+                'submenuTemplate'=>"\n<ul class=\"treeview-menu\">\n{items}\n</ul>\n",
+                'activateParents'=>true,
                 'encodeLabels' => false,
                 'items' => [
-                    ['label' => 'Разделы', 'options' => ['class' => 'header']],
-                    ['label' => '<i class="fa fa-files-o"></i>' . Yii::t('backend', 'Pages'), 'url' => ['/page/default/index']],
-                    ['label' => '<i class="fa fa-list"></i>' . Yii::t('backend', 'News'), 'url' => ['/news/default/index']],
-                    ['label' => '<i class="fa fa-cube"></i>' . Yii::t('backend', 'Banners'), 'url' => ['/banner/default/index']],
-                    ['label' => '<i class="fa fa-user"></i>' . Yii::t('backend', 'Users'), 'url' => ['/user/default/index']],
-                    /*['label' => 'Products', 'url' => ['product/index'], 'items' => [
-                        ['label' => 'New Arrivals', 'url' => ['product/index', 'tag' => 'new']],
-                        ['label' => 'Most Popular', 'url' => ['product/index', 'tag' => 'popular']],
-                    ]],*/
-                    //['label' => 'Login', 'url' => ['site/login'], 'visible' => !Yii::$app->user->isGuest],
+                  [
+                    'label' => 'Разделы',
+                    'options' => ['class' => 'header']
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'Pages'),
+                    'icon'=>'<i class="fa fa-files-o"></i>',
+                    'url'=>['/page/default/index'],
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'News'),
+                    'icon'=>'<i class="fa fa-list"></i>',
+                    'url'=>['/news/default/index'],
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'Banners'),
+                    'icon'=>'<i class="fa fa-cube"></i>',
+                    'url'=>['/banner/default/index'],
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'Users'),
+                    'icon'=>'<i class="fa fa-user"></i>',
+                    'url'=>['/user/default/index'],
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'Other'),
+                    'url' => '#',
+                    'icon'=>'<i class="fa fa-cogs"></i>',
+                    'options'=>['class'=>'treeview'],
+                    'items'=>[
+                      [
+                        'label'=>Yii::t('backend', 'Logs'),
+                        'url'=>['/log/default/index'],
+                        'icon'=>'<i class="fa fa-angle-double-right"></i>',
+                        'badge'=>\backend\modules\log\models\SystemLog::find()->count(),
+                        'badgeBgClass'=>'label-danger',
+                      ],
+                    ],
+                  ],
+                  //['label' => 'Login', 'url' => ['site/login'], 'visible' => !Yii::$app->user->isGuest],
                 ],
             ]);
             

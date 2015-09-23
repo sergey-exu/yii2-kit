@@ -14,6 +14,7 @@ return [
     'modules' => [
         'auth' => ['class' => 'backend\modules\auth\Module'],
         'user' => ['class' => 'backend\modules\user\Module'],
+        'log' => ['class' => 'backend\modules\log\Module'],
         'news' => ['class' => 'backend\modules\news\Module'],
         'page' => ['class' => 'backend\modules\page\Module'],
         'banner' => ['class' => 'backend\modules\banner\Module'],
