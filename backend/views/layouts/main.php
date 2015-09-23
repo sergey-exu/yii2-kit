@@ -99,23 +99,6 @@ AppAsset::register($this);
               </div>
             </div><!-- /.user-panel -->
         
-            
-        
-            <!-- Sidebar Menu -->
-            <!--ul class="sidebar-menu">
-              <li class="header">Разделы</li>
-              <li class="active"><a href="#"><span>Link</span></a></li>
-              <li class="treeview">
-                <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                  <li><a href="#">Link in level 2</a></li>
-                  <li><a href="#">Link in level 2</a></li>
-                </ul>
-              </li>
-            </ul><!-- /.sidebar-menu -->
-            
-            
-            
             <?php echo Menu::widget([
                 'options'=>['class'=>'sidebar-menu'],
                 'linkTemplate' => '<a href="{url}">{icon}<span>{label}</span>{right-icon}{badge}</a>',
@@ -143,16 +126,16 @@ AppAsset::register($this);
                     'url'=>['/banner/default/index'],
                   ],
                   [
-                    'label'=>Yii::t('backend', 'Users'),
-                    'icon'=>'<i class="fa fa-user"></i>',
-                    'url'=>['/user/default/index'],
-                  ],
-                  [
-                    'label'=>Yii::t('backend', 'Other'),
+                    'label'=>Yii::t('backend', 'System'),
                     'url' => '#',
                     'icon'=>'<i class="fa fa-cogs"></i>',
                     'options'=>['class'=>'treeview'],
                     'items'=>[
+                      [
+                        'label'=>Yii::t('backend', 'Users'),
+                        'icon'=>'<i class="fa fa-angle-double-right"></i>',
+                        'url'=>['/user/default/index'],
+                      ],
                       [
                         'label'=>Yii::t('backend', 'Logs'),
                         'url'=>['/log/default/index'],
