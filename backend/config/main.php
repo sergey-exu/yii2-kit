@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'defaultRoute' => 'dashboard/default/index',
     'modules' => [
         'auth' => ['class' => 'backend\modules\auth\Module'],
         'user' => ['class' => 'backend\modules\user\Module'],
@@ -36,14 +37,9 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                //'<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
-                //'<_c:[\w\-]+>' => '<_c>/index',
-                //'<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
-                
                 '<_m:[\w\-]+>/' => '<_m>/default/index',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
-                
             ],
         ],
     ],
