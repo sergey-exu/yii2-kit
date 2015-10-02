@@ -18,6 +18,7 @@ return [
         'news' => ['class' => 'backend\modules\news\Module'],
         'page' => ['class' => 'backend\modules\page\Module'],
         'banner' => ['class' => 'backend\modules\banner\Module'],
+        'dashboard' => ['class' => 'backend\modules\dashboard\Module'],
     ],
     'components' => [
         'user' => [
