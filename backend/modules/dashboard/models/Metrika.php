@@ -33,7 +33,7 @@ class Metrika extends Object
     
     public function curl( $url, $params = [] )
 	{
-		$ch = curl_init( );
+		$ch = curl_init();
 		$options = [
 			CURLOPT_RETURNTRANSFER => 1,
 			CURLOPT_TIMEOUT => 30,

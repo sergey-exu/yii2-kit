@@ -3,8 +3,8 @@ namespace backend\modules\dashboard\controllers;
 
 use Yii;
 use yii\web\Controller;
-use backend\modules\dashboard\models\Metrika;
 use yii\filters\AccessControl;
+use backend\modules\dashboard\models\Metrika;
 
 class DefaultController extends Controller
 {
@@ -45,6 +45,7 @@ class DefaultController extends Controller
                     return $metrika->getData(Metrika::CONTENT);
                     break;
             }
+        
         }
         return $this->render('index');
     }

@@ -107,6 +107,15 @@ AppAsset::register($this);
                 'encodeLabels' => false,
                 'items' => [
                   [
+                    'label'=>Yii::t('backend', 'Navigation'),
+                    'options' => ['class' => 'header']
+                  ],
+                  [
+                    'label'=>Yii::t('backend', 'Statistics'),
+                    'icon'=>'<i class="fa fa-pie-chart"></i>',
+                    'url'=>['/dashboard/default/index'],
+                  ],
+                  [
                     'label' => 'Разделы',
                     'options' => ['class' => 'header']
                   ],
