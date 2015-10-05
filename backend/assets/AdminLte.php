@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\assets;
+namespace backend\assets;
 
 use yii\web\AssetBundle;
 class AdminLte extends AssetBundle
