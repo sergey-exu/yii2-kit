@@ -57,12 +57,16 @@ $(function () {
     var myLine = new Chart(myElement).Line(lineChartData, options);
     
     $("#visits .progress-number b").text(json.totals.visits);
-    $('#visits').css('width', (json.totals.visits*100)/200 +'%').attr('aria-valuenow', (json.totals.visits*100)/200);
+    $('#visits .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
      
     $("#page_views .progress-number b").text(json.totals.page_views);
+    $('#page_views .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
     
     $("#visitors .progress-number b").text(json.totals.visitors);
+    $('#visitors .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
+    
     $("#new_visitors .progress-number b").text(json.totals.new_visitors);
+    $('#new_visitors .progress-bar').css('width', (json.totals.visits*100)/500 +'%');
     
     $(".chartLine #loader").hide();
 
@@ -90,7 +94,9 @@ $(function () {
                
             });
         });
-        var pieOptions = {};
+        var pieOptions = {
+            legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend fa-ul\"><% for (var i=0; i<segments.length; i++){%><li><i class=\"fa fa-li fa-circle-o\" style=\"color:<%=segments[i].fillColor%>\"></i><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+        };
         var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
         var pieChart = new Chart(pieChartCanvas).Doughnut(PieData, pieOptions);
         

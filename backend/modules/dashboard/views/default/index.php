@@ -29,30 +29,30 @@ $this->title = 'Статистика';
             <div class="col-md-4">
               <div class="progress-group" id="visits">
                 <span class="progress-text">Визиты</span>
-                <span class="progress-number"><b></b>/200</span>
+                <span class="progress-number"><b></b>/1000</span>
                 <div class="progress sm">
-                  <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                  <div class="progress-bar progress-bar-aqua"></div>
                 </div>
               </div><!-- /.progress-group -->
               <div class="progress-group" id="page_views">
                 <span class="progress-text">Просмотры</span>
-                <span class="progress-number"><b></b>/400</span>
+                <span class="progress-number"><b></b>/1000</span>
                 <div class="progress sm">
-                  <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                  <div class="progress-bar progress-bar-red"></div>
                 </div>
               </div><!-- /.progress-group -->
               <div class="progress-group" id="visitors">
                 <span class="progress-text">Посетители</span>
                 <span class="progress-number"><b></b>/1000</span>
                 <div class="progress sm">
-                  <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                  <div class="progress-bar progress-bar-green"></div>
                 </div>
               </div><!-- /.progress-group -->
               <div class="progress-group" id="new_visitors">
                 <span class="progress-text">Новые посетители</span>
                 <span class="progress-number"><b></b>/500</span>
                 <div class="progress sm">
-                  <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                  <div class="progress-bar progress-bar-yellow"></div>
                 </div>
               </div><!-- /.progress-group -->
             </div><!-- /.col -->
@@ -65,7 +65,7 @@ $this->title = 'Статистика';
 </div>
 
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-lg-4 col-md-6">
     <div class="box box-default">
                 <div class="box-header with-border">
                   <h3 class="box-title">Источники: сводка</h3>
@@ -75,22 +75,14 @@ $this->title = 'Статистика';
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <div class="row">
+                  <div class="row chartPie">
+                    <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 50%; top: 50%;"></i>
                     <div class="col-md-6">
-                      <div class="chart chartPie">
+                      <div class="chart">
                         <canvas id="pieChart" height="155" width="186" style="width: 186px; height: 155px;"></canvas>
-                        <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 50%; top: 40%;"></i>
-                      </div><!-- ./chart-responsive -->
+                      </div>
                     </div><!-- /.col -->
                     <div class="col-md-6">
-                      <style>
-                        .doughnut-legend li span{
-                            display: inline-block;
-                            width: 12px;
-                            height: 12px;
-                            margin-right: 5px;
-                        }
-                      </style>
                       <div id="doughnut-legend"></div>
                     </div><!-- /.col -->
                   </div><!-- /.row -->
