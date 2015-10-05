@@ -2,6 +2,10 @@
 /* @var $this yii\web\View */
 use yii\web\View;
 use backend\assets\ChartJsAsset;
+use backend\modules\dashboard\assets\MetrikaAsset;
+
+ChartJsAsset::register($this);
+MetrikaAsset::register($this);
 
 $this->title = 'Статистика';
 ?>
@@ -76,7 +80,7 @@ $this->title = 'Статистика';
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <div class="row chartPie">
-                    <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 50%; top: 50%;"></i>
+                    <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 45%; top: 50%;"></i>
                     <div class="col-md-6">
                       <div class="chart">
                         <canvas id="pieChart" height="155" width="186" style="width: 186px; height: 155px;"></canvas>
@@ -98,12 +102,3 @@ $this->title = 'Статистика';
               </div>
   </div>
 </div>
-
-
-
-
-<?php ChartJsAsset::register($this); ?>
-
-
-
-<?php $this->registerJsFile('/backend/js/aa.js', ['depends' => [\yii\web\JqueryAsset::className()]]); ?>
