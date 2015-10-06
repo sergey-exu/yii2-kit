@@ -17,8 +17,15 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Navigation' => 'Навигация',
-    'Statistics' => 'Статистика',
+    'Change at your own risk' => 'Изменяйте на свой страх )',
+    'Create Settings' => 'Создать настройки',
+    'Created' => 'Создан',
+    'Key' => 'Ключ',
+    'Modified' => 'Изменен',
+    'Section' => 'Раздел',
+    'Settings' => 'Настройки',
+    'Update Settings' => 'Обновить настройки',
+    'Value' => 'Значение',
     'A link to reset password will be sent there.' => 'Ссылка для сброса пароля будет отправлена на указаный email',
     'Alias' => 'ЧПУ',
     'Are you sure you want to delete this item?' => 'Вы уверены, что хотите удалить этот элемент?',
@@ -48,6 +55,7 @@ return [
     'Meta Description' => 'Мета Описание',
     'Meta Title' => 'Мета Заголовок',
     'Name' => 'Имя',
+    'Navigation' => 'Навигация',
     'News' => 'Новости',
     'Page Content' => 'Текст страницы',
     'Pages' => 'Страницы',
@@ -62,6 +70,7 @@ return [
     'Request password reset' => 'Сбросить пароль',
     'Reset' => 'Сбросить',
     'Search' => 'Поиск',
+    'Statistics' => 'Статистика',
     'Status' => 'Статус',
     'Summary' => 'Резюме',
     'Support' => 'Поддержка',

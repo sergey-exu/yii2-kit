@@ -32,12 +32,16 @@ AppAsset::register($this);
         <header class="main-header">
           <nav class="navbar navbar-static-top">
             <div class="container-fluid">
-            <div class="navbar-header">
-              <a href="/backend" class="navbar-brand">Admin panel</a>
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                <i class="fa fa-bars"></i>
-              </button>
-            </div>
+              <div class="navbar-header">
+                
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                  <span class="sr-only">Toggle navigation</span>
+                </a>
+                
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                  <i class="fa fa-bars"></i>
+                </button>
+              </div>
             
               
             
@@ -144,6 +148,11 @@ AppAsset::register($this);
                         'label'=>Yii::t('backend', 'Users'),
                         'icon'=>'<i class="fa fa-angle-double-right"></i>',
                         'url'=>['/user/default/index'],
+                      ],
+                      [
+                        'label'=>Yii::t('backend', 'Settings'),
+                        'icon'=>'<i class="fa fa-angle-double-right"></i>',
+                        'url'=>['/settings/default/index'],
                       ],
                       [
                         'label'=>Yii::t('backend', 'Logs'),

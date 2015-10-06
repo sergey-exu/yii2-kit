@@ -20,6 +20,7 @@ return [
         'page' => ['class' => 'backend\modules\page\Module'],
         'banner' => ['class' => 'backend\modules\banner\Module'],
         'dashboard' => ['class' => 'backend\modules\dashboard\Module'],
+        'settings' => ['class' => 'backend\modules\settings\Module'],
     ],
     'components' => [
         'user' => [
@@ -42,6 +43,7 @@ return [
                 '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
             ],
         ],
+        'settings' => ['class' => 'backend\modules\settings\components\Settings'],
     ],
     'params' => $params,
 ];
