@@ -130,7 +130,7 @@ public function actionIndex()
         return [
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Yii::$app->params['domainName'] . '/images/', // Directory URL address, where files are stored.
+                'url' => Yii::$app->settings->get('main.domainName') . '/images/', // Directory URL address, where files are stored.
                 'path' => '@frontend/web/images', // Or absolute path to directory where files are stored.
                 'validatorOptions' => [
                     'maxWidth' => 1000,
@@ -139,7 +139,7 @@ public function actionIndex()
             ],
             'file-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Yii::$app->params['domainName'] . '/doc/', // Directory URL address, where files are stored.
+                'url' => Yii::$app->settings->get('main.domainName') . '/doc/', // Directory URL address, where files are stored.
                 'path' => '@frontend/web/doc', // Or absolute path to directory where files are stored.
                 'uploadOnlyImage' => false,
                 'validatorOptions' => [

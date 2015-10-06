@@ -1,4 +1,3 @@
-// это универсальная функция.. мы тут только задаем тип желаемых данных
 function getData(data_type) {
     return new Promise(function (resolve, reject) {
         $.ajax({

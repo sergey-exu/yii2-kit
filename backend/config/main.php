@@ -43,7 +43,6 @@ return [
                 '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
             ],
         ],
-        'settings' => ['class' => 'backend\modules\settings\components\Settings'],
     ],
     'params' => $params,
 ];

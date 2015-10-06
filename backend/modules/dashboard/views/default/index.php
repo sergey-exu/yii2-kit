@@ -8,6 +8,7 @@ ChartJsAsset::register($this);
 MetrikaAsset::register($this);
 
 $this->title = 'Статистика';
+
 ?>
 
 <div class="row">

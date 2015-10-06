@@ -51,7 +51,7 @@ AppAsset::register($this);
             <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav">
                 <!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li-->
-                <li><?= HTML::a('Перейти на сайт', Yii::$app->params['domainName'], ['target' => '_blank']) ?></li>
+                <li><?= HTML::a('Перейти на сайт', Yii::$app->settings->get('main.domainName'), ['target' => '_blank']) ?></li>
                 <!--li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">

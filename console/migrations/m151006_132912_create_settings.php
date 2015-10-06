@@ -13,14 +13,42 @@ class m151006_132912_create_settings extends Migration
         }
         
         $this->createTable('{{%settings}}', [
-            'id' => Schema::TYPE_PK,
-            'type' => Schema::TYPE_STRING,
-            'section' => Schema::TYPE_STRING,
-            'key' => Schema::TYPE_STRING,
-            'value' => Schema::TYPE_TEXT,
-            'created' => Schema::TYPE_DATETIME,
-            'modified' => Schema::TYPE_DATETIME,
+            'id' => $this->primaryKey(),
+            'type' => $this->string()->defaultValue('string'),
+            'section' => $this->string(),
+            'key' => $this->string(),
+            'value' => $this->text(),
+            'created' => $this->integer(),
+            'modified' => $this->integer(),
         ], $tableOptions);
+        
+        $this->insert('{{%settings}}', [
+            'type' => 'string',
+            'section' => 'main',
+            'key' => 'domainName',
+            'value' => 'http://test.ru',
+        ]);
+        
+        $this->insert('{{%settings}}', [
+            'type' => 'string',
+            'section' => 'analitycs',
+            'key' => 'gaTrackingId',
+            'value' => 'UA-66634666-1',
+        ]);
+        
+        $this->insert('{{%settings}}', [
+            'type' => 'string',
+            'section' => 'metrika',
+            'key' => 'counter',
+            'value' => '21869497',
+        ]);
+        
+        $this->insert('{{%settings}}', [
+            'type' => 'string',
+            'section' => 'metrika',
+            'key' => 'token',
+            'value' => '36a00bef64db456aa4eb41cad2203c31',
+        ]);
     }
 
     public function down()

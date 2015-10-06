@@ -37,5 +37,6 @@ return [
                 ]
             ],
         ],
+        'settings' => ['class' => 'backend\modules\settings\components\Settings'],
     ],
 ];

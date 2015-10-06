@@ -64,7 +64,7 @@ AppAsset::register($this);
 
     <?php $this->endBody() ?>
     
-    <?= GoogleAnalytics::widget(['trackingId' => Yii::$app->params['gaTrackingId']]); ?>
+    <?= GoogleAnalytics::widget(['trackingId' => Yii::$app->settings->get('analitycs.gaTrackingId')]); ?>
 </body>
 </html>
 <?php $this->endPage() ?>

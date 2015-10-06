@@ -4,6 +4,7 @@ namespace backend\modules\dashboard\models;
 use Yii;
 use yii\base\Object;
 
+
 class Metrika extends Object
 {
     const HOST = "https://api-metrika.yandex.ru";
@@ -14,11 +15,6 @@ class Metrika extends Object
     const GEO = '/stat/geo';
     const CONTENT = '/stat/content/popular';
     
-    public $counter = '21869497';
-    public $token = '36a00bef64db456aa4eb41cad2203c31';
-    
-    public $id;
-    
     
     public function getData($type_data)
     {
@@ -28,7 +24,7 @@ class Metrika extends Object
     
     private function setUrl($type_data) 
     {
-        return self::HOST . $type_data . '.json?id=' . $this->counter . '&pretty=1' . '&oauth_token=' . $this->token;
+        return self::HOST . $type_data . '.json?id=' . Yii::$app->settings->get('metrika.counter') . '&pretty=1' . '&oauth_token=' . Yii::$app->settings->get('metrika.token');
     }
     
     public function curl( $url, $params = [] )
