@@ -32,7 +32,8 @@ return [
             'errorAction' => 'site/error',
         ],
         'request' => [
-            'baseUrl' => '/backend'
+            'baseUrl' => '/backend',
+            //'enableCsrfValidation' => false,
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
