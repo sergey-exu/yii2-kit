@@ -19,7 +19,10 @@ use yii\helpers\Url;
                                 'replaceDivs' => false,
                                 'minHeight' => 400,
                                 'imageUpload' => Url::to(['/page/default/image-upload']),
-                                'fileUpload' => Url::to(['/page/default/file-upload'])
+                                'fileUpload' => Url::to(['/page/default/file-upload']),
+                                'plugins' => [
+                                    'table'
+                                ]
                             ]
                         ]);
                     ?>
