@@ -93,9 +93,7 @@ class DefaultController extends Controller
                 
              ]);
              
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            return $this->refresh();
         } else {
             return $this->render('update', [
                 'model' => $model,

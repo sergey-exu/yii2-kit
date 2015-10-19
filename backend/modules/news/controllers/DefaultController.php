@@ -85,10 +85,7 @@ public function actionIndex()
                 'positonY' => 'top',
                 'positonX' => 'right',
              ]);
-             
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            return $this->refresh();
         } else {
             return $this->render('update', [
                 'model' => $model,
