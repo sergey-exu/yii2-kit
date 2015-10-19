@@ -33,7 +33,7 @@ return [
         ],
         'request' => [
             'baseUrl' => '/backend',
-            //'enableCsrfValidation' => false,
+            'enableCsrfValidation' => false,
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

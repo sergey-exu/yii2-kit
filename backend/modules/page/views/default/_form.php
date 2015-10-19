@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use vova07\imperavi\Widget;
+use vova07\imperavi\Widget as Imperavi;
 use yii\helpers\Url;
 ?>
 
@@ -13,7 +13,7 @@ use yii\helpers\Url;
                 <div class="col-md-8">
                     <?= $form->field($model, 'page_title')->textInput(['maxlength' => true]) ?>
                     <?php 
-                        echo $form->field($model, 'page_content')->widget(Widget::className(), [
+                        echo $form->field($model, 'page_content')->widget(Imperavi::className(), [
                             'settings' => [
                                 'lang' => 'ru',
                                 'replaceDivs' => false,

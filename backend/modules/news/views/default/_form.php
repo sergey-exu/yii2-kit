@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use vova07\imperavi\Widget;
+use vova07\imperavi\Widget as Imperavi;
 use kartik\date\DatePicker;
 use yii\helpers\Url;
 
@@ -17,7 +17,7 @@ use yii\helpers\Url;
                     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($model, 'summary')->textarea(['rows' => 6]) ?>
                     <?php 
-                        echo $form->field($model, 'text')->widget(Widget::className(), [
+                        echo $form->field($model, 'text')->widget(Imperavi::className(), [
                             'settings' => [
                                 'lang' => 'ru',
                                 'replaceDivs' => false,
