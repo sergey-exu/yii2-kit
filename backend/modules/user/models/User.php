@@ -26,6 +26,11 @@ class User extends \yii\db\ActiveRecord
     const SCENARIO_USER_CREATE = 'Create';
     const SCENARIO_USER_UPDATE = 'Update';
     
+    const ROLE_USER = 'user';
+    const ROLE_MODER = 'moder';
+    const ROLE_ADMIN = 'admin';
+    
+    
     public static function tableName()
     {
         return 'user';
@@ -54,21 +59,32 @@ class User extends \yii\db\ActiveRecord
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('backend', 'This email address has already been taken.')],
-
+            
+            ['role', 'required'],
+            
             [['newPassword', 'newPasswordRepeat'], 'required', 'on' => self::SCENARIO_USER_CREATE],
             ['newPassword', 'string', 'min' => 6],
             ['newPasswordRepeat', 'compare', 'compareAttribute' => 'newPassword'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
+    public static function getRoleArray()
+    {
+        return [
+            self::ROLE_USER => Yii::t('backend', 'User'),
+            self::ROLE_MODER => Yii::t('backend', 'Moderator'),
+            self::ROLE_ADMIN => Yii::t('backend', 'Admin'),
+        ];
+    }
+
+    
     public function attributeLabels()
     {
         return [
             'username' => Yii::t('backend', 'Username'),
             'email' => Yii::t('backend', 'Email'),
+            'role' => Yii::t('backend', 'Role'),
             'status' => Yii::t('backend', 'Status'),
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),

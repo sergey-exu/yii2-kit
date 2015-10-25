@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use backend\modules\user\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\user\models\User */
@@ -16,7 +17,8 @@ use yii\widgets\ActiveForm;
                 <div class="col-md-4">
                     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
                     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
-                    <? // = $form->field($model, 'status')->textInput() ?>
+                    <?= $form->field($model, 'role')->dropDownlist(User::getRoleArray()) ?>
+                    <?= $form->field($model, 'status')->checkbox() ?>
                     <hr/>
                     <?= $form->field($model, 'newPassword')->passwordInput() ?>
                     <?= $form->field($model, 'newPasswordRepeat')->passwordInput() ?>

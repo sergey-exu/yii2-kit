@@ -20,6 +20,7 @@ class m130524_201442_init extends Migration
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
+            'role' => $this->string()->notNull()->defaultValue('user'),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -30,6 +31,7 @@ class m130524_201442_init extends Migration
             'auth_key' => 'd09rqzOiyyfj39-o2u9umK9PsbbPW8Yt',
             'password_hash' => '$2y$13$6UudAwFUgWn8oBD6fqgKoOy8Ihpqrre4R/N72iAytxbaSyXYCIGLC',
             'email' => 'test@test.ru',
+            'role' => 'admin',
         ]);
     }
 

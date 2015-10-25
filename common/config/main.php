@@ -38,5 +38,12 @@ return [
             ],
         ],
         'settings' => ['class' => 'backend\modules\settings\components\Settings'],
+        'authManager' => [
+            'class' => 'yii\rbac\PhpManager',
+            'defaultRoles' => ['admin', 'user'],
+            'itemFile' => '@common/components/rbac/items.php',
+            'assignmentFile' => '@common/components/rbac/assignments.php',
+            'ruleFile' => '@common/components/rbac/rules.php'
+        ],
     ],
 ];

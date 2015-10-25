@@ -71,8 +71,23 @@ class LoginForm extends Model
     {
         if ($this->_user === false) {
             $this->_user = User::findByUsername($this->username);
+            /*
+            //Находим пользователя в БД по логину или эл.почте
+            $this->_user = User::find()
+                ->andWhere(['or', ['username' => $this->username],
+                                  ['email' => $this->username]])
+                ->one();
+            */
+            
+            //Проверяем права доступа, если нет, то делаем вид,
+            //что пользователь не найден.
+            //if (!Yii::$app->user->can('admin', ['user' => $this->_user])) {
+            //if (!Yii::$app->user->can('admin')) {
+            if ($this->_user->role !== 'admin') {
+                $this->_user = null;
+            }
+            
         }
-
         return $this->_user;
     }
     

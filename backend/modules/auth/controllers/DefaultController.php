@@ -27,7 +27,7 @@ class DefaultController extends Controller
                     [
                         'actions' => ['logout', 'signup'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['@'], //need set admin
                     ],
                     [
                         'actions' => ['login', 'error', 'request-password-reset', 'reset-password'],
