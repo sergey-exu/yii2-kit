@@ -17,11 +17,9 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'Admin' => 'Администратор',
-    'Moderator' => 'Модератор',
-    'Role' => 'Роль',
-    'User' => 'Пользователь',
+    'Username or email' => 'Имя пользователя или email',
     'A link to reset password will be sent there.' => 'Ссылка для сброса пароля будет отправлена на указаный email',
+    'Admin' => 'Администратор',
     'Alias' => 'ЧПУ',
     'Are you sure you want to delete this item?' => 'Вы уверены, что хотите удалить этот элемент?',
     'Banners' => 'Баннеры',
@@ -53,6 +51,7 @@ return [
     'Message' => 'Сообщение',
     'Meta Description' => 'Мета Описание',
     'Meta Title' => 'Мета Заголовок',
+    'Moderator' => 'Модератор',
     'Modified' => 'Изменен',
     'Name' => 'Имя',
     'Navigation' => 'Навигация',
@@ -69,6 +68,7 @@ return [
     'Remember Me' => 'Запомнить меня',
     'Request password reset' => 'Сбросить пароль',
     'Reset' => 'Сбросить',
+    'Role' => 'Роль',
     'Search' => 'Поиск',
     'Section' => 'Раздел',
     'Settings' => 'Настройки',
@@ -90,6 +90,7 @@ return [
     'Update Settings' => 'Обновить настройки',
     'Update {modelClass}: ' => 'Обновить {modelClass}: ',
     'Updated At' => 'Обновлено',
+    'User' => 'Пользователь',
     'Username' => 'Имя пользователя',
     'Users' => 'Пользователи',
     'Value' => 'Значение',
