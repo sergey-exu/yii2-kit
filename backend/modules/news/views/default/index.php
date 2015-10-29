@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 //use Yii;
-//use yii\helpers\Url;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\NewsSearch */
@@ -36,16 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'updated_at:date',
                 // 'meta_title',
                 // 'meta_description',
-                'alias',
-                /*
+                //'alias',
                 [
                     'attribute' => 'alias',
                     'format' => 'raw',
-                    'value' => function ($model, $key, $index, $column) {
-                        return Html::a(Html::encode($model->alias), ['/news', 'alias' => $model->alias]);
+                    'value' => function ($model) {
+                        return Html::a($model->alias, Url::to('/news/' .$model->alias . '/', true), ['target'=>'_blank']);
                     }
-                ],
-                */
+                ], 
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template'=>'{update} {delete}',

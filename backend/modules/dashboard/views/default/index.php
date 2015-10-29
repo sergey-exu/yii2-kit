@@ -103,6 +103,3 @@ $this->title = 'Статистика';
               </div>
   </div>
 </div>
-
-
-<?= Yii::$app->user->can('admin') ? 'admin' : 'user' ?>

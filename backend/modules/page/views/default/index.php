@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\PageSearch */
@@ -24,7 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-    
                 //'id',
                 'created_at:date',
                 //'updated_at:datetime',
@@ -32,8 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'page_content:ntext',
                 // 'meta_title',
                 // 'meta_description',
-                 'alias',
-    
+                // 'alias',
+                [
+                    'attribute' => 'alias',
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        //return Html::a($model->alias, Url::to(['/page/view', 'alias' => $model->alias], true), ['target'=>'_blank']);
+                        return Html::a($model->alias, Url::to('/' .$model->alias . '/', true), ['target'=>'_blank']);
+                    }
+                ], 
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template'=>'{update} {delete}',
