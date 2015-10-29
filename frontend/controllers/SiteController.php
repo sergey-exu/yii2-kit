@@ -60,11 +60,18 @@ class SiteController extends Controller
         ];
     }
 
+    /*
     public function actionIndex()
     {
         return $this->render('index');
     }
-
+    */
+    
+    public function actionOffline()
+    {
+        $this->layout = 'clear';
+        return $this->render('offline');
+    }
 
     public function actionContact()
     {

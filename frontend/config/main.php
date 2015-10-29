@@ -27,24 +27,13 @@ return [
             'showScriptName' => false,
             'suffix' => '/',
             'rules' => [
-                
                 '' => 'page/index',
                 'news/' => 'news/index',
                 'news/<alias:[\w\-]+>' => 'news/view',
                 '<alias:[\w\-]+>' => 'page/view',
-                
-                //'<action:sections>/<id:\d+>' => 'site/<action>',
-                //'partners/' => 'partners/index',
-                
-                //'<_m:[\w\-]+>/<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/<_a>',
-                //'<_m:[\w\-]+>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
-                //'<_m:[\w\-]+>' => '<_m>/default/index',
-                //'<_m:[\w\-]+>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
-                
-                //'<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
-
             ],
         ],
     ],
     'params' => $params,
+    //'catchAll' => ['site/offline'], // если нужно вывести сайт в оффлайн
 ];
