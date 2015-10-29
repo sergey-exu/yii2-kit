@@ -18,8 +18,9 @@ class PageSearch extends Page
     public function rules()
     {
         return [
-            [['id', 'created_at', 'updated_at'], 'integer'],
+            ['id', 'integer'],
             [['page_title', 'page_content', 'meta_title', 'meta_description', 'alias'], 'safe'],
+            [['created_at', 'updated_at'], 'date', 'format' => 'php:d.m.Y'],
         ];
     }
 
@@ -57,18 +58,13 @@ class PageSearch extends Page
             // $query->where('0=1');
             return $dataProvider;
         }
-
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
-
+        
         $query->andFilterWhere(['like', 'page_title', $this->page_title])
-            ->andFilterWhere(['like', 'page_content', $this->page_content])
-            ->andFilterWhere(['like', 'meta_title', $this->meta_title])
-            ->andFilterWhere(['like', 'meta_description', $this->meta_description])
             ->andFilterWhere(['like', 'alias', $this->alias]);
+            
+        $query
+            ->andFilterWhere(['>=', 'created_at', $this->created_at ? strtotime($this->created_at . ' 00:00:00') : null])
+            ->andFilterWhere(['<=', 'created_at', $this->created_at ? strtotime($this->created_at . ' 23:59:59') : null]);
 
         return $dataProvider;
     }

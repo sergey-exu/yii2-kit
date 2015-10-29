@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 //use Yii;
 use yii\helpers\Url;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\NewsSearch */
@@ -26,17 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-    
                 //'id',
-                'created_at:date',
-                'publish_at:date',
                 'title',
                 //'summary:ntext',
                 //'text:ntext',
                 //'updated_at:date',
                 // 'meta_title',
                 // 'meta_description',
-                //'alias',
                 [
                     'attribute' => 'alias',
                     'format' => 'raw',
@@ -44,6 +41,36 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a($model->alias, Url::to('/news/' .$model->alias . '/', true), ['target'=>'_blank']);
                     }
                 ], 
+                [
+                    'attribute' => 'created_at',
+                    'format'=> ['date', 'php:d.m.Y'],
+                    'filter' => DatePicker::widget([
+                                'model' => $searchModel, 
+                                'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                                'attribute' => 'created_at',
+                                'pickerButton' => false,
+                                'pluginOptions' => [
+                                    'autoclose'=>true,
+                                    'todayHighlight' => true,
+                                ]
+                    ]),
+                    'contentOptions' => ['style' => 'white-space: nowrap; width: 170px;'],
+                ],
+                [
+                    'attribute' => 'publish_at',
+                    'format'=> ['date', 'php:d.m.Y'],
+                    'filter' => DatePicker::widget([
+                                'model' => $searchModel, 
+                                'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                                'attribute' => 'publish_at',
+                                'pickerButton' => false,
+                                'pluginOptions' => [
+                                    'autoclose'=>true,
+                                    'todayHighlight' => true,
+                                ]
+                    ]),
+                    'contentOptions' => ['style' => 'white-space: nowrap; width: 170px;'],
+                ],
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template'=>'{update} {delete}',

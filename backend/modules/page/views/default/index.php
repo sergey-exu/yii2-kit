@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\PageSearch */
@@ -26,13 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
                 //'id',
-                'created_at:date',
-                //'updated_at:datetime',
                 'page_title',
-                //'page_content:ntext',
-                // 'meta_title',
-                // 'meta_description',
-                // 'alias',
                 [
                     'attribute' => 'alias',
                     'format' => 'raw',
@@ -41,6 +36,26 @@ $this->params['breadcrumbs'][] = $this->title;
                         return Html::a($model->alias, Url::to('/' .$model->alias . '/', true), ['target'=>'_blank']);
                     }
                 ], 
+                [
+                    'attribute' => 'created_at',
+                    'format'=> ['date', 'php:d.m.Y'],
+                    'filter' => DatePicker::widget([
+                                'model' => $searchModel, 
+                                'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                                'attribute' => 'created_at',
+                                'pickerButton' => false,
+                                'pluginOptions' => [
+                                    'autoclose'=>true,
+                                    'todayHighlight' => true,
+                                ]
+                    ]),
+                    'contentOptions' => ['style' => 'white-space: nowrap; width: 170px;'],
+                ],
+                //'updated_at:datetime',
+                //'page_content:ntext',
+                // 'meta_title',
+                // 'meta_description',
+                // 'alias',
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'template'=>'{update} {delete}',

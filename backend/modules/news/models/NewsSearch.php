@@ -18,8 +18,9 @@ class NewsSearch extends News
     public function rules()
     {
         return [
-            [['id', 'created_at', 'updated_at', 'publish_at', 'meta_title', 'meta_description'], 'integer'],
+            [['id', 'meta_title', 'meta_description'], 'integer'],
             [['title', 'summary', 'text', 'alias'], 'safe'],
+            [['created_at', 'publish_at'], 'date', 'format' => 'php:d.m.Y'],
         ];
     }
 
@@ -58,19 +59,14 @@ class NewsSearch extends News
             return $dataProvider;
         }
 
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'publish_at' => $this->publish_at,
-            'meta_title' => $this->meta_title,
-            'meta_description' => $this->meta_description,
-        ]);
-
         $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'summary', $this->summary])
-            ->andFilterWhere(['like', 'text', $this->text])
             ->andFilterWhere(['like', 'alias', $this->alias]);
+            
+        $query
+            ->andFilterWhere(['>=', 'created_at', $this->created_at ? strtotime($this->created_at . ' 00:00:00') : null])
+            ->andFilterWhere(['<=', 'created_at', $this->created_at ? strtotime($this->created_at . ' 23:59:59') : null])
+            ->andFilterWhere(['>=', 'publish_at', $this->publish_at ? strtotime($this->publish_at . ' 00:00:00') : null])
+            ->andFilterWhere(['<=', 'publish_at', $this->publish_at ? strtotime($this->publish_at . ' 23:59:59') : null]);
 
         return $dataProvider;
     }
