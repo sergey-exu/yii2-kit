@@ -41,8 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value:ntext',
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template'=>'{update} {delete}',
-                    'contentOptions' => ['class' => 'actionColumn'],
+                    //'template'=>'{update} {delete}',
+                    'template'=>'{update}',
+                    'contentOptions' => ['class' => 'actionColumn-one-btn'],
                     'buttonOptions' => [
                         'class' => 'btn btn-sm btn-default',
                         'style' => 'padding:1px 10px;',

@@ -95,3 +95,6 @@ a.desc:after {
 /* my */
 
 .actionColumn {width:90px;}
+.actionColumn-one-btn {width:45px;}
+.actionColumn-two-btn {width:90px;}
+.actionColumn-three-btn {width:135px;}
