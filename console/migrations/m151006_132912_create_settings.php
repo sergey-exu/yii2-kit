@@ -24,13 +24,6 @@ class m151006_132912_create_settings extends Migration
         
         $this->insert('{{%settings}}', [
             'type' => 'string',
-            'section' => 'main',
-            'key' => 'domainName',
-            'value' => 'http://test.ru',
-        ]);
-        
-        $this->insert('{{%settings}}', [
-            'type' => 'string',
             'section' => 'analitycs',
             'key' => 'gaTrackingId',
             'value' => 'UA-66634666-1',
