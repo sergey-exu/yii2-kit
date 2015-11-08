@@ -8,6 +8,11 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'News'), 'url' =>
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<div class="news-title-meta">
+    <div class="news-meta">
+        <span class="news-meta-date"><?= Yii::$app->formatter->asDate($model->publish_at, 'dd.MM.yyyy') ?></span>
+    </div>
+</div>
 <div class="news-view">
     <h1><?= Html::encode($model->title) ?></h1>
     <div><p><?= Html::encode($model->summary) ?></p></div>
