@@ -11,6 +11,10 @@ use frontend\widgets\GoogleAnalytics;
 /* @var $content string */
 
 AppAsset::register($this);
+
+//use frontend\assets\FancyBox;
+//FancyBox::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
