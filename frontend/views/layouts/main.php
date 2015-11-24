@@ -12,8 +12,8 @@ use frontend\widgets\GoogleAnalytics;
 
 AppAsset::register($this);
 
-//use frontend\assets\FancyBox;
-//FancyBox::register($this);
+use frontend\assets\FancyBox;
+FancyBox::register($this);
 
 ?>
 <?php $this->beginPage() ?>
