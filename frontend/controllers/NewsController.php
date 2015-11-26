@@ -20,7 +20,7 @@ class NewsController extends Controller
         $dataProvider = new ActiveDataProvider([
             'query' => News::find()->where('publish_at < ' . Yii::$app->formatter->asTimestamp('now')),
             'pagination' => ['pageSize' => 10],
-            'sort'=> ['defaultOrder' => ['publish_at'=>SORT_DESC]],
+            'sort'=> ['defaultOrder' => ['publish_at'=>SORT_DESC, 'id' => SORT_DESC]],
         ]);
 
         return $this->render('index', [
