@@ -140,6 +140,11 @@ AppAsset::register($this);
                     'url'=>['/banner/default/index'],
                   ],
                   [
+                    'label'=>Yii::t('backend', 'Menu'),
+                    'icon'=>'<i class="fa fa-cube"></i>',
+                    'url'=>['/menu/default/index'],
+                  ],
+                  [
                     'label'=>Yii::t('backend', 'System'),
                     'url' => '#',
                     'icon'=>'<i class="fa fa-cogs"></i>',

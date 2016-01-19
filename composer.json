@@ -24,7 +24,8 @@
         "bower-asset/admin-lte": "^2.0",
         "bower-asset/font-awesome": "^4.0",
         "bower-asset/chartjs": "1.0.2",
-        "bower-asset/fancybox": "^2.1.5"
+        "bower-asset/fancybox": "^2.1.5",
+        "bower-asset/nestable2": "^1.2.3"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

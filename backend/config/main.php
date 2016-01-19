@@ -21,6 +21,7 @@ return [
         'banner' => ['class' => 'backend\modules\banner\Module'],
         'dashboard' => ['class' => 'backend\modules\dashboard\Module'],
         'settings' => ['class' => 'backend\modules\settings\Module'],
+        'menu' => ['class' => 'backend\modules\menu\Module'],
     ],
     'components' => [
         'user' => [
@@ -39,6 +40,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                //'<_c:[\w\-]+>/<_a:[\w\-]+>' => '<_c>/<_a>',
                 '<_m:[\w\-]+>/' => '<_m>/default/index',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
                 '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
