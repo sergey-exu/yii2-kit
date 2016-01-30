@@ -141,7 +141,7 @@ AppAsset::register($this);
                   ],
                   [
                     'label'=>Yii::t('backend', 'Menu'),
-                    'icon'=>'<i class="fa fa-cube"></i>',
+                    'icon'=>'<i class="fa fa-bars"></i>',
                     'url'=>['/menu/default/index'],
                   ],
                   [
