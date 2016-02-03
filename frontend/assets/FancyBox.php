@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class FancyBox extends AssetBundle
 {
-    public $sourcePath = '@bower/bower-asset/fancybox/source';
+    public $sourcePath = '@bower/fancybox/source';
     
     public $css = [
         'jquery.fancybox.css'
