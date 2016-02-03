@@ -2,10 +2,10 @@
 
 use yii\helpers\Html;
 
-$this->title = $model->title;
+$this->title = $model->meta_title;
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
 $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'News'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->title;
 ?>
 
 <div class="news-title-meta">

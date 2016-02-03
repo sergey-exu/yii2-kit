@@ -2,9 +2,9 @@
 
 use yii\helpers\Html;
 
-$this->title = $model->page_title;
+$this->title = $model->meta_title;
 $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_description]);
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $model->title;
 ?>
 
 <div class="page-view">
