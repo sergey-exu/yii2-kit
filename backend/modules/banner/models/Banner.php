@@ -73,7 +73,7 @@ class Banner extends \yii\db\ActiveRecord
                 if(is_file($imgPath)) 
                     unlink($imgPath);
                     
-                $imgName = Yii::$app->getSecurity()->generateRandomString('8') . '.' . $file->extension;
+                $imgName = Yii::$app->getSecurity()->generateRandomString(8) . '.' . $file->extension;
                 $file->saveAs(Yii::getAlias('@frontend/web/images/') . $imgName);
                 $this->img =  $imgName;
             }

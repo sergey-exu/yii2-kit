@@ -25,6 +25,7 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'enableStrictParsing' => true,
             'suffix' => '/',
             'rules' => [
                 '' => 'page/index',

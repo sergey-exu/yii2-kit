@@ -11,9 +11,9 @@ use yii\helpers\Url;
         <?php $form = ActiveForm::begin(); ?>
             <div class="row">
                 <div class="col-md-8">
-                    <?= $form->field($model, 'page_title')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                     <?php 
-                        echo $form->field($model, 'page_content')->widget(Imperavi::className(), [
+                        echo $form->field($model, 'content')->widget(Imperavi::className(), [
                             'settings' => [
                                 'lang' => 'ru',
                                 'replaceDivs' => false,

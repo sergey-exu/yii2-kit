@@ -2,46 +2,11 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-//use backend\assets\Nestable;
-//use yii\web\View;
+use backend\assets\Nestable;
+use yii\web\View;
 
-//Nestable::register($this);
+Nestable::register($this);
 ?>
-
-
-<div class="menu-form">
-
-        <?php $form = ActiveForm::begin(); ?>
-        
-        <div class="row">
-            <div class="col-md-12">
-                
-                <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-                
-                <?= $form->field($model, 'data')->widget(
-                        'trntv\aceeditor\AceEditor',
-                        [
-                            'mode'=>'json', // programing language mode. Default "html"
-                            'theme'=>'tomorrow_night' // editor theme. Default "github"
-                        ]
-                    )
-                ?>
-                
-            </div>
-        </div>
-            
-        <div class="form-group">
-            <?= Html::submitButton($model->isNewRecord ? Yii::t('backend', 'Create') : Yii::t('backend', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        </div>
-                
-        <?php ActiveForm::end(); ?>
-
-
-</div>
-
-
-
-<?php /*
 
 <div class="menu-form">
 
@@ -131,7 +96,7 @@ use yii\widgets\ActiveForm;
 
 });
 
-", View::POS_END); */?>
+", View::POS_END); ?>
 
 
 

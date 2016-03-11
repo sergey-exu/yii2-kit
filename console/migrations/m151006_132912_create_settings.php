@@ -46,8 +46,9 @@ class m151006_132912_create_settings extends Migration
 
     public function down()
     {
-        echo "m151006_132912_create_settings cannot be reverted.\n";
-        return false;
+        //echo "m151006_132912_create_settings cannot be reverted.\n";
+        //return false;
+        $this->dropTable('{{%settings}}');
     }
 
 }

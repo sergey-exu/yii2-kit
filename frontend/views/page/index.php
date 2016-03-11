@@ -7,5 +7,5 @@ $this->registerMetaTag(['name' => 'description', 'content' => $model->meta_descr
 ?>
 
 <div class="page-main">
-    <?= Html::decode($model->page_content) ?>
+    <?= Html::decode($model->content) ?>
 </div>

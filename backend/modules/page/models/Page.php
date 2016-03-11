@@ -11,8 +11,8 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $id
  * @property integer $created_at
  * @property integer $updated_at
- * @property string $page_title
- * @property string $page_content
+ * @property string $title
+ * @property string $content
  * @property string $meta_title
  * @property string $meta_description
  * @property string $alias
@@ -42,12 +42,12 @@ class Page extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['page_title', 'meta_title', 'meta_description', 'alias'], 'required'],
+            [['title', 'meta_title', 'meta_description', 'alias'], 'required'],
             [['created_at', 'updated_at'], 'integer'],
-            [['page_content'], 'string'],
-            [['page_title'], 'string', 'max' => 255],
+            [['content'], 'string'],
+            [['title'], 'string', 'max' => 255],
             [['alias'], 'unique'],
-            [['meta_title', 'alias'], 'string', 'max' => 128],
+            [['meta_title', 'alias'], 'string', 'max' => 256],
             [['meta_description'], 'string', 'max' => 256]
         ];
     }
@@ -61,8 +61,8 @@ class Page extends \yii\db\ActiveRecord
             'id' => 'ID',
             'created_at' => Yii::t('backend', 'Created At'),
             'updated_at' => Yii::t('backend', 'Updated At'),
-            'page_title' => Yii::t('backend', 'Title'),
-            'page_content' => Yii::t('backend', 'Page Content'),
+            'title' => Yii::t('backend', 'Title'),
+            'content' => Yii::t('backend', 'Page Content'),
             'meta_title' => Yii::t('backend', 'Meta Title'),
             'meta_description' => Yii::t('backend', 'Meta Description'),
             'alias' => Yii::t('backend', 'Alias'),

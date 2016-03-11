@@ -22,7 +22,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/scripts.js',
-        //'js/scroll.js' //#scroll
+        //'js/scroll.js' //#ancor_scroll
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -15,7 +15,7 @@ class m150819_131010_create_banner_table extends Migration
         
         $this->createTable('{{%banner}}', [
             'id' => $this->primaryKey(),
-            'name' => $this->string()->notNull()->unique(),
+            'name' => $this->string()->notNull(),
             'link' => $this->string(512)->notNull(),
             'status' => $this->string(512)->notNull(),
             'img' => $this->string(32)->notNull(),

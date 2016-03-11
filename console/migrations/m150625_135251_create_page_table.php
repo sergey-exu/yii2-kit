@@ -16,8 +16,8 @@ class m150625_135251_create_page_table extends Migration
             'id' => Schema::TYPE_PK,
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
-            'page_title' => Schema::TYPE_STRING . ' NOT NULL',
-            'page_content' => Schema::TYPE_TEXT,
+            'title' => Schema::TYPE_STRING . ' NOT NULL',
+            'content' => Schema::TYPE_TEXT,
             
             'meta_title' => Schema::TYPE_STRING . '(128) NOT NULL',
             'meta_description' => Schema::TYPE_STRING . '(256) NOT NULL',
@@ -25,16 +25,16 @@ class m150625_135251_create_page_table extends Migration
         ], $tableOptions);
         
         $this->insert('{{%page}}', [
-            'page_title' => 'Главная страница',
-            'page_content' => 'Главная страница',
+            'title' => 'Главная страница',
+            'content' => 'Главная страница',
             'meta_title' => 'Главная страница',
             'meta_description' => 'Главная страница',
             'alias' => 'main',
         ]);
         
         $this->insert('{{%page}}', [
-            'page_title' => 'Тестовая страница',
-            'page_content' => 'Тестовая страница',
+            'title' => 'Тестовая страница',
+            'content' => 'Тестовая страница',
             'meta_title' => 'Тестовая страница',
             'meta_description' => 'Тестовая страница',
             'alias' => 'test-page',

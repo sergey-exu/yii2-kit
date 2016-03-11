@@ -19,7 +19,7 @@ class PageSearch extends Page
     {
         return [
             ['id', 'integer'],
-            [['page_title', 'page_content', 'meta_title', 'meta_description', 'alias'], 'safe'],
+            [['title', 'content', 'meta_title', 'meta_description', 'alias'], 'safe'],
             [['created_at', 'updated_at'], 'date', 'format' => 'php:d.m.Y'],
         ];
     }
@@ -59,7 +59,7 @@ class PageSearch extends Page
             return $dataProvider;
         }
         
-        $query->andFilterWhere(['like', 'page_title', $this->page_title])
+        $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'alias', $this->alias]);
             
         $query

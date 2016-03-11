@@ -2,12 +2,9 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model backend\modules\menu\models\Menu */
 
-$this->title = Yii::t('backend', 'Update') . ': ' . $model->name;
+$this->title = Yii::t('backend', 'Update menu');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('backend', 'Menu'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('backend', 'Update');
 ?>
 <div class="box box-primary">

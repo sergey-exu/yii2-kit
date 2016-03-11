@@ -8,6 +8,6 @@ $this->params['breadcrumbs'][] = $model->title;
 ?>
 
 <div class="page-view">
-    <h1><?= Html::encode($model->page_title) ?></h1>
-    <div><?= Html::decode($model->page_content) ?></div>
+    <h1><?= Html::encode($model->title) ?></h1>
+    <div><?= Html::decode($model->content) ?></div>
 </div>
