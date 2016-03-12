@@ -51,7 +51,7 @@ class DefaultController extends Controller
         $model = new Menu();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect('index');
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -59,18 +59,27 @@ class DefaultController extends Controller
         }
     }
 
-    /**
-     * Updates an existing Menu model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
+
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect('index');
+            
+            Yii::$app->getSession()->setFlash('success', [
+                'type' => 'success',
+                'duration' => 5000,
+                'icon' => 'fa fa-check fa-fw',
+                'title' => 'Сохранено',
+                'message' => 'Информация сохранена успешно',
+                'positonY' => 'top',
+                'positonX' => 'right',
+                
+             ]);
+             
+            return $this->refresh();
+            
         } else {
             return $this->render('update', [
                 'model' => $model,

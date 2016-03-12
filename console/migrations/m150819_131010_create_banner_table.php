@@ -13,7 +13,7 @@ class m150819_131010_create_banner_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
         
-        $this->createTable('{{%banner}}', [
+        $this->createTable('banner', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
             'link' => $this->string(512)->notNull(),
@@ -26,7 +26,7 @@ class m150819_131010_create_banner_table extends Migration
 
     public function down()
     {
-        $this->dropTable('{{%banner}}');
+        $this->dropTable('banner');
     }
 
 }

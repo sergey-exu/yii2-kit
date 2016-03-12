@@ -20,7 +20,38 @@ class m160115_093338_create_menu_table extends Migration
         
         $this->insert('menu', [
             'name' => 'main',
-            'data' => '[{"id":1},{"id":2,"children":[{"id":3},{"id":4},{"id":9},{"id":10}]},{"id":5,"children":[{"id":6},{"id":7},{"id":8}]}]',
+            'data' => '[
+    {
+        "label" : "Main",
+        "url" : "/"
+    },
+    {
+        "label" : "Page",
+        "items" : [
+            {
+                "label" : "test page",
+                "url" : {
+                    "0":"page/view",
+                    "alias":"test-page"
+                }
+            },
+            {
+                "label" : "test page 2 (blank)",
+                "url" : {
+                    "0":"page/view",
+                    "alias":"test-page-2"
+                },
+                "linkOptions": {"target":"_blank"}
+            }
+        ]
+    },
+    {
+        "label":"News",
+        "url":{
+            "0":"/news/index"
+        }
+    }
+]',
         ]);
         
     }

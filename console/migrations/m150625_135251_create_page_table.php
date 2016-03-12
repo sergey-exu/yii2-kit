@@ -12,7 +12,7 @@ class m150625_135251_create_page_table extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
         }
  
-        $this->createTable('{{%page}}', [
+        $this->createTable('page', [
             'id' => Schema::TYPE_PK,
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
@@ -24,7 +24,7 @@ class m150625_135251_create_page_table extends Migration
             'alias' => Schema::TYPE_STRING . '(128) NOT NULL',
         ], $tableOptions);
         
-        $this->insert('{{%page}}', [
+        $this->insert('page', [
             'title' => 'Главная страница',
             'content' => 'Главная страница',
             'meta_title' => 'Главная страница',
@@ -32,18 +32,26 @@ class m150625_135251_create_page_table extends Migration
             'alias' => 'main',
         ]);
         
-        $this->insert('{{%page}}', [
+        $this->insert('page', [
             'title' => 'Тестовая страница',
-            'content' => 'Тестовая страница',
-            'meta_title' => 'Тестовая страница',
-            'meta_description' => 'Тестовая страница',
+            'content' => 'Текст тестовой страницы',
+            'meta_title' => 'meta заголовок тестовой страницы',
+            'meta_description' => 'meta описание тестовой страницы',
             'alias' => 'test-page',
+        ]);
+        
+        $this->insert('page', [
+            'title' => 'Тестовая страница 2',
+            'content' => 'Текст тестовой страницы 2',
+            'meta_title' => 'meta 2 тестовая страница',
+            'meta_description' => 'meta описание тестовой страницы 2',
+            'alias' => 'test-page-2',
         ]);
     }
 
     public function down()
     {
-        $this->dropTable('{{%page}}');
+        $this->dropTable('page');
     }
 
 }

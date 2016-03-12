@@ -40,16 +40,16 @@ FancyBox::register($this);
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
-            $menuItems = [
-                ['label' => 'News', 'url' => ['/news/index']],
-                ['label' => 'Page', 'url' => ['/test-page']],
-                ['label' => 'Contact', 'url' => ['/site/contact']],
-            ];
             
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => $menuItems,
-            ]);
+            if ($menuItems = \backend\modules\menu\models\Menu::find()->where(['name' => 'main'])->one()) {
+                $menuItems = json_decode($menuItems['data'], true);
+                
+                echo Nav::widget([
+                    'options' => ['class' => 'navbar-nav navbar-right'],
+                    'items' => $menuItems,
+                ]);    
+            } else Yii::error('Не найдены настройки основного меню (mane "main")');
+                
             NavBar::end();
         ?>
 
@@ -114,7 +114,7 @@ FancyBox::register($this);
     */
     
     
-    
+    /*
     
     $menu_data = \backend\modules\menu\models\Menu::find()->where(['name' => 'main'])->one();
     
@@ -131,6 +131,27 @@ FancyBox::register($this);
             }
         echo '</li>';
     }
+    */
+    
+    /*
+    
+    foreach ($menuObj as $value) {
+        echo '<li>';
+            
+            echo isset($value->href) ? "1" : "2";
+            
+            
+        echo '</li>';
+    }
+    
+    */
+    
+    
+    
+    
+    
+    
+    
     
     
     ?>
