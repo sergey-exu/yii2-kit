@@ -14,8 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="box box-primary">
     <div class="box-body">
     
-        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    
         <p>
             <?= Html::a(Yii::t('backend', 'Create Banner'), ['create'], ['class' => 'btn btn-success']) ?>
         </p>
@@ -25,16 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-    
-                'name',
                 [
                     'attribute' => 'img',
                     'format' => 'raw',
                     'value' => function ($model, $key, $index, $column) {
                         return Html::img('/images/' . $model->img, ['width' => '130px']);
-                    }
+                    },
+                    'contentOptions' => ['style' => 'width:160px;'],
                 ],
-                //'link',
+                'name',
+                'link',
                 'status',
                 //'description:ntext',
                 [

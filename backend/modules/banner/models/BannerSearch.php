@@ -12,33 +12,23 @@ use backend\modules\banner\models\Banner;
  */
 class BannerSearch extends Banner
 {
-    /**
-     * @inheritdoc
-     */
+    
     public function rules()
     {
         return [
-            [['id', 'img', 'type'], 'integer'],
+            [['id', 'type'], 'integer'],
             [['name', 'link', 'status', 'description'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
+
     public function search($params)
     {
         $query = Banner::find();
@@ -59,15 +49,13 @@ class BannerSearch extends Banner
         }
 
         $query->andFilterWhere([
-            'id' => $this->id,
-            'img' => $this->img,
             'type' => $this->type,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'link', $this->link])
-            ->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'status', $this->status]);
+            
 
         return $dataProvider;
     }

@@ -23,15 +23,22 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-    
+                //['class' => 'yii\grid\SerialColumn'],
+                [
+                    //'attribute' => '#',
+                    'contentOptions' => ['style' => 'width:50px;'],
+                    'format' => 'raw',
+                    'value' => function ($model) {
+                        return Html::img('/backend/images/user-avatar.gif', ['alt'=>'avatar', 'style' => 'border-radius: 100px;']);
+                    }
+                ],
                 //'id',
                 'username',
                 //'auth_key',
                 //'password_hash',
                 //'password_reset_token',
                 'email:email',
-                //'status',
+                'status',
                 'created_at:date',
                 //'updated_at:date',
     
