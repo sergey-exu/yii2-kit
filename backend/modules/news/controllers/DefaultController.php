@@ -128,7 +128,7 @@ public function actionIndex()
         return [
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Url::to('/images/', true), // Directory URL address, where files are stored.
+                'url' => Url::to('/images/'), // Directory URL address, where files are stored.
                 'path' => '@frontend/web/images', // Or absolute path to directory where files are stored.
                 'validatorOptions' => [
                     'maxWidth' => 1000,
@@ -137,7 +137,7 @@ public function actionIndex()
             ],
             'file-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Url::to('/doc/', true),
+                'url' => Url::to('/doc/'),
                 'path' => '@frontend/web/doc', // Or absolute path to directory where files are stored.
                 'uploadOnlyImage' => false,
                 'validatorOptions' => [
