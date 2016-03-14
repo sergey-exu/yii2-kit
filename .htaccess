@@ -17,9 +17,9 @@
     RewriteCond %{REQUEST_URI} ^/backend
     RewriteRule ^backend/(.*)$ backend/web/$1 [L]
 
-    # Statics redirect
-    RewriteCond %{REQUEST_URI} ^/statics
-    RewriteRule ^statics/(.*)$ statics/web/$1 [L]
+    # Storage redirect
+    RewriteCond %{REQUEST_URI} ^/storage
+    RewriteRule ^storage/(.*)$ storage/$1 [L]
 
     # Frontend redirect
     RewriteCond %{REQUEST_URI} ^(.*)$
