@@ -145,6 +145,11 @@ AppAsset::register($this);
                     'url'=>['/menu/default/index'],
                   ],
                   [
+                    'label'=>Yii::t('backend', 'File Manager'),
+                    'icon'=>'<i class="fa fa-floppy-o"></i>',
+                    'url'=>['/file-manager/index']
+                  ],
+                  [
                     'label'=>Yii::t('backend', 'System'),
                     'url' => '#',
                     'icon'=>'<i class="fa fa-cogs"></i>',

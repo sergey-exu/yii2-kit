@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'img',
                     'format' => 'raw',
                     'value' => function ($model, $key, $index, $column) {
-                        return Html::img('/images/' . $model->img, ['width' => '130px']);
+                        return Html::img('/storage/banner/' . $model->img, ['width' => '130px']);
                     },
                     'contentOptions' => ['style' => 'width:160px;'],
                 ],

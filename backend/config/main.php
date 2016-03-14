@@ -47,5 +47,21 @@ return [
             ],
         ],
     ],
+    'controllerMap'=>[
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\Controller',
+            'access' => ['admin'],
+            //'disabledCommands' => ['netmount'],
+            'roots' => [
+                [
+                    'baseUrl' => '@storageUrl',
+                    'basePath' => '@storage',
+                    'path' => '/',
+                    //'name' => 'Global'
+                    //'access' => ['read' => 'manager', 'write' => 'manager']
+                ]
+            ]
+        ]
+    ],
     'params' => $params,
 ];

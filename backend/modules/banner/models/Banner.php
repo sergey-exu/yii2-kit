@@ -69,12 +69,17 @@ class Banner extends \yii\db\ActiveRecord
             
             if($file = UploadedFile::getInstance($this, 'img'))
             {
-                $imgPath= Yii::getAlias('@frontend/web/images/') . $this->img;
+                $imgPath= Yii::getAlias('@storage/banner/') . $this->img;
                 if(is_file($imgPath)) 
                     unlink($imgPath);
                     
                 $imgName = Yii::$app->getSecurity()->generateRandomString(8) . '.' . $file->extension;
-                $file->saveAs(Yii::getAlias('@frontend/web/images/') . $imgName);
+                
+                if (!file_exists(Yii::getAlias('@storage/banner/'))) {
+                    mkdir(Yii::getAlias('@storage/banner/'), 0777, true);
+                }
+                
+                $file->saveAs(Yii::getAlias('@storage/banner/') . $imgName, true);
                 $this->img =  $imgName;
             }
             
@@ -90,7 +95,7 @@ class Banner extends \yii\db\ActiveRecord
     {
         if (parent::beforeDelete()) {
             
-            $imgPath= Yii::getAlias('@frontend/web/images/') . $this->img;
+            $imgPath= Yii::getAlias('@storage/banner/') . $this->img;
             if(is_file($imgPath)) 
                 unlink($imgPath);
             
