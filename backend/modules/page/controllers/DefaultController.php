@@ -136,8 +136,8 @@ class DefaultController extends Controller
         return [
             'image-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Url::to('/images/'),
-                'path' => '@frontend/web/images', // absolute path to directory where files are stored.
+                'url' => Url::to('/storage/attachments/'),
+                'path' => '@storage/attachments', // absolute path to directory where files are stored.
                 'validatorOptions' => [
                     'maxWidth' => 1000,
                     'maxHeight' => 1000
@@ -145,8 +145,8 @@ class DefaultController extends Controller
             ],
             'file-upload' => [
                 'class' => 'vova07\imperavi\actions\UploadAction',
-                'url' => Url::to('/doc/'),
-                'path' => '@frontend/web/doc', // absolute path to directory where files are stored.
+                'url' => Url::to('/storage/attachments/'),
+                'path' => '@storage/attachments', // absolute path to directory where files are stored.
                 'uploadOnlyImage' => false,
                 'validatorOptions' => [
                     'maxSize' => 1000000 //1Mb
