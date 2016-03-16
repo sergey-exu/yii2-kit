@@ -18,8 +18,8 @@ function getData(data_type) {
 //--------------
     
 $(function () {
-    getData('traffic').then(function (json) { 
     
+    getData('traffic').then(function (json) { 
     var vizits = [];
     $.each(json.data, function (i, el) {
         vizits.push({
@@ -55,17 +55,12 @@ $(function () {
     
     var myLine = new Chart(myElement).Line(lineChartData, options);
     
-    $("#visits .progress-number b").text(json.totals.visits);
-    $('#visits .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
-     
-    $("#page_views .progress-number b").text(json.totals.page_views);
-    $('#page_views .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
     
-    $("#visitors .progress-number b").text(json.totals.visitors);
-    $('#visitors .progress-bar').css('width', (json.totals.visits*100)/1000 +'%');
+    $("#visits").text(json.totals.visits); 
+    $("#page_views").text(json.totals.page_views);
+    $("#visitors").text(json.totals.visitors);
+    $("#new_visitors").text(json.totals.new_visitors);
     
-    $("#new_visitors .progress-number b").text(json.totals.new_visitors);
-    $('#new_visitors .progress-bar').css('width', (json.totals.visits*100)/500 +'%');
     
     $(".chartLine #loader").hide();
 
