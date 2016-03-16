@@ -41,9 +41,10 @@ return [
             'showScriptName' => false,
             'rules' => [
                 //'<_c:[\w\-]+>/<_a:[\w\-]+>' => '<_c>/<_a>',
-                '<_m:[\w\-]+>/' => '<_m>/default/index',
-                '<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
-                '<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
+                //'file-manager' => 'file-manager/index',
+                //'<_m:[\w\-]+>/' => '<_m>/default/index',
+                //'<_m:[\w\-]+>/<_a:[\w\-]+>' => '<_m>/default/<_a>',
+                //'<_m:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_m>/default/<_a>',
             ],
         ],
     ],
@@ -57,8 +58,8 @@ return [
                     'baseUrl' => '@storageUrl',
                     'basePath' => '@storage',
                     'path' => '/',
-                    //'name' => 'Global'
-                    //'access' => ['read' => 'manager', 'write' => 'manager']
+                    'name' => 'Storage'
+                    //'access' => ['read' => 'admin', 'write' => 'admin']
                 ]
             ]
         ]
