@@ -14,28 +14,22 @@ $this->title = 'Статистика';
 <div class="row">
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
-
+      <span class="info-box-icon bg-aqua"><i class="fa fa-line-chart"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Визиты</span>
         <span class="info-box-number" id="visits">-</span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
   </div>
   <!-- /.col -->
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-red"><i class="fa fa-eye"></i></span>
-
       <div class="info-box-content">
         <span class="info-box-text">Просмотры</span>
         <span class="info-box-number" id="page_views">-</span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
   </div>
   <!-- /.col -->
 
@@ -45,34 +39,24 @@ $this->title = 'Статистика';
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-green"><i class="fa fa-users"></i></span>
-
       <div class="info-box-content">
         <span class="info-box-text">Посетители</span>
         <span class="info-box-number" id="visitors">-</span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
   </div>
   <!-- /.col -->
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
       <span class="info-box-icon bg-yellow"><i class="fa fa-user-plus"></i></span>
-
       <div class="info-box-content">
         <span class="info-box-text">Новые посетители</span>
         <span class="info-box-number" id="new_visitors">-</span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
   </div>
   <!-- /.col -->
 </div>
-    
-    
-    
-    
     
     
     
