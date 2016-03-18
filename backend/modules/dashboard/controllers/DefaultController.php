@@ -5,9 +5,11 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use backend\modules\dashboard\models\Metrika;
+use backend\modules\dashboard\models\MetrikaV2;
 
 class DefaultController extends Controller
 {
+    
     public function behaviors()
     {
         return [
@@ -27,27 +29,11 @@ class DefaultController extends Controller
     
     public function actionIndex()
     {
-        $metrika = new Metrika();
+        $metrika = new MetrikaV2();
         
-        if (Yii::$app->request->isAjax && $i=Yii::$app->request->get('id')) {
-            
-            switch ($i) {
-                case "traffic":
-                    return $metrika->getData(Metrika::TRAFFIC);
-                    break;
-                case "sources":
-                    return $metrika->getData(Metrika::SOURCES);
-                    break;
-                case "geo":
-                    return $metrika->getData(Metrika::GEO);
-                    break;
-                case "content":
-                    return $metrika->getData(Metrika::CONTENT);
-                    break;
-            }
-        
+        if (Yii::$app->request->isAjax && Yii::$app->request->get('id')) {
+            return $metrika->getData(Yii::$app->request->get('id'));
         }
         return $this->render('index');
     }
-    
 }

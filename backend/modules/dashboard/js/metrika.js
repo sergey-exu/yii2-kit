@@ -12,14 +12,36 @@ function getData(data_type) {
         });
     });
 }
-    
+
+//https://kit-sergey-exu.c9.io/backend/dashboard/default/index?id=daily_summary
+//не удаляй
+//ща можно кое чта посмотрю
+//  url: '/',
+
+
+$(function () {
+    getData('daily_summary').then(function (json) { 
+        $("#visits").text(json.totals[0]); 
+        $("#page_views").text(json.totals[1]);
+        $("#visitors").text(json.totals[2]);
+        $("#new_visitors").text(json.totals[3]+"%");
+    });
+});
+
+
+
 //--------------
 //- AREA CHART -
 //--------------
-    
+
+
+/*
+
 $(function () {
     
-    getData('traffic').then(function (json) { 
+    getData('traffic_month').then(function (json) { 
+        alert(json);
+    /*    
     var vizits = [];
     $.each(json.data, function (i, el) {
         vizits.push({
@@ -56,12 +78,10 @@ $(function () {
     var myLine = new Chart(myElement).Line(lineChartData, options);
     
     
-    $("#visits").text(json.totals.visits); 
-    $("#page_views").text(json.totals.page_views);
-    $("#visitors").text(json.totals.visitors);
-    $("#new_visitors").text(json.totals.new_visitors);
     
+    */
     
+    /*
     $(".chartLine #loader").hide();
 
     }, function (error) {
@@ -70,11 +90,72 @@ $(function () {
 
 });
     
+*/
+    
+    
+
+
+
+
+
+/*
+смотри отключил обертку, так работает
+http://kit-sergey-exu.c9.io/backend/dashboard/default/index
+
+а с оберткой не хочет почему?
+*/
+
+
+
+
+
+
+
+
+//--------------
+//- STATS TODAY -
+//-----
+
+
+    
+//$(function () {
+    
+    //alert('начало');
+    
+    //getData('metrics=ym:s:visits').then(function (json) { 
+        
+        //alert('yes');
+        
+    /*    
+    var vizits = [];
+    $.each(json.data, function (i, el) {
+        vizits.push({
+            date: (el.date).replace(/(\d{4})(\d{2})(\d{2})/,'$3.$2'),
+            visits: el.visits,
+            visitors: el.visitors
+        });
+    });
+    
+    /*
+    $("#visits").text(json.totals.visits); 
+    $("#page_views").text(json.totals.page_views);
+    $("#visitors").text(json.totals.visitors);
+    $("#new_visitors").text(json.totals.new_visitors);
+    
+
+    }, function (error) {
+        console.log('Failed!: ' + error.statusText);
+    });
+*/
+//});
+    
+    
 
 //-------------
 //- PIE CHART -
 //-------------
 
+/*
 $(function () {
     //если определеные цвета то загони их в массив как ниже и вытаскивай в цикле
     var colors = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'];
@@ -103,4 +184,4 @@ $(function () {
     });
 
 });
- 
+ */
