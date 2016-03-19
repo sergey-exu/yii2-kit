@@ -58,15 +58,13 @@ $this->title = 'Статистика';
   <!-- /.col -->
 </div>
     
-    
-    
 <div class="row">
   <div class="col-md-7">
     
     <!-- AREA CHART -->
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Трафик: посещаемость за неделю</h3>
+        <h3 class="box-title">Трафик: посещаемость за 14 дней</h3>
         <div class="box-tools pull-right">
           <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
           <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>

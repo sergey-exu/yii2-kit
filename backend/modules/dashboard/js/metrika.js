@@ -1,3 +1,4 @@
+//GET data
 function getData(data_type) {
     return new Promise(function (resolve, reject) {
         $.ajax({
@@ -13,11 +14,8 @@ function getData(data_type) {
     });
 }
 
-//https://kit-sergey-exu.c9.io/backend/dashboard/default/index?id=daily_summary
-//не удаляй
-//ща можно кое чта посмотрю
-//  url: '/',
 
+//- DAILY SUMMARY
 
 $(function () {
     getData('daily_summary').then(function (json) { 
@@ -25,131 +23,62 @@ $(function () {
         $("#page_views").text(json.totals[1]);
         $("#visitors").text(json.totals[2]);
         $("#new_visitors").text(json.totals[3]+"%");
+    }, function (error) {
+        console.log('Failed!: ' + error.statusText);
     });
 });
 
 
 
-//--------------
-//- AREA CHART -
-//--------------
-
-
-/*
+//- AREA CHART 
 
 $(function () {
-    
     getData('traffic_month').then(function (json) { 
-        alert(json);
-    /*    
-    var vizits = [];
-    $.each(json.data, function (i, el) {
-        vizits.push({
-            date: (el.date).replace(/(\d{4})(\d{2})(\d{2})/,'$3.$2'),
-            visits: el.visits,
-            visitors: el.visitors
+
+        var vizits = [];
+        $.each(json.data, function (i, el) {
+            vizits.push({
+                date: (el.dimensions[0].name).replace(/(\d{4})-(\d{2})-(\d{2})/,'$3.$2'),
+                visits: el.metrics[0],
+                visitors: el.metrics[1]
+            });
         });
-    });
-    var date = vizits.map(function(el) { return el.date} );
-    var vs = vizits.map(function(el) { return el.visits} );
-    var v = vizits.map(function(el) { return el.visitors} );
     
-    var myElement = document.getElementById("areaChartLine").getContext("2d"),
+        var date = vizits.map(function(el) { return el.date} );
+        var visit = vizits.map(function(el) { return el.visits} );
+        var user = vizits.map(function(el) { return el.visitors} );
     
-    lineChartData = {
-        labels: date,
-        datasets: [{
-            label: "Посетители",
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(220,220,220,1)",
-            pointStrokeColor: "#fff",
-            data: v
-        }, {
-            label: "Просмотры",
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            data: vs
-        }]
-    }, options = {};
-    
-    var myLine = new Chart(myElement).Line(lineChartData, options);
-    
-    
-    
-    */
-    
-    /*
-    $(".chartLine #loader").hide();
+        var myElement = document.getElementById("areaChartLine").getContext("2d"),
+        
+        lineChartData = {
+            labels: date,
+            datasets: [{
+                label: "Просмотры",
+                fillColor: "rgba(75,148,192,1)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                data: visit
+            }, {
+                label: "Посетители",
+                fillColor: "rgba(210,214,222,0.8)",
+                strokeColor: "rgba(255,255,255,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                data: user
+            }]
+        }, options = {};
+        
+        var myLine = new Chart(myElement).Line(lineChartData, options);
+        
+        $(".chartLine #loader").hide();
 
     }, function (error) {
         console.log('Failed!: ' + error.statusText);
     });
-
 });
     
-*/
-    
-    
 
-
-
-
-
-/*
-смотри отключил обертку, так работает
-http://kit-sergey-exu.c9.io/backend/dashboard/default/index
-
-а с оберткой не хочет почему?
-*/
-
-
-
-
-
-
-
-
-//--------------
-//- STATS TODAY -
-//-----
-
-
-    
-//$(function () {
-    
-    //alert('начало');
-    
-    //getData('metrics=ym:s:visits').then(function (json) { 
-        
-        //alert('yes');
-        
-    /*    
-    var vizits = [];
-    $.each(json.data, function (i, el) {
-        vizits.push({
-            date: (el.date).replace(/(\d{4})(\d{2})(\d{2})/,'$3.$2'),
-            visits: el.visits,
-            visitors: el.visitors
-        });
-    });
-    
-    /*
-    $("#visits").text(json.totals.visits); 
-    $("#page_views").text(json.totals.page_views);
-    $("#visitors").text(json.totals.visitors);
-    $("#new_visitors").text(json.totals.new_visitors);
-    
-
-    }, function (error) {
-        console.log('Failed!: ' + error.statusText);
-    });
-*/
-//});
-    
-    
 
 //-------------
 //- PIE CHART -

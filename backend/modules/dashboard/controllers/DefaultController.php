@@ -5,7 +5,6 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\AccessControl;
 use backend\modules\dashboard\models\Metrika;
-use backend\modules\dashboard\models\MetrikaV2;
 
 class DefaultController extends Controller
 {
@@ -29,7 +28,7 @@ class DefaultController extends Controller
     
     public function actionIndex()
     {
-        $metrika = new MetrikaV2();
+        $metrika = new Metrika();
         
         if (Yii::$app->request->isAjax && Yii::$app->request->get('id')) {
             return $metrika->getData(Yii::$app->request->get('id'));

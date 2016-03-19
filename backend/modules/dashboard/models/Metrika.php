@@ -7,25 +7,31 @@ use yii\base\Object;
 
 class Metrika extends Object
 {
-    const HOST = "https://api-metrika.yandex.ru";
-    const GET_TOKEN = '/auth/get_token';
-    
-    const TRAFFIC = '/stat/traffic/summary';
-    const SOURCES ='/stat/sources/summary';
-    const GEO = '/stat/geo';
-    const CONTENT = '/stat/content/popular';
+    const HOST = "https://api-metrika.yandex.ru/stat/v1/data";
+    const SUMMARY_DAILY = "&metrics=ym:s:visits,ym:s:pageviews,ym:s:users,ym:s:percentNewVisitors&date1=today&date2=today";
+    const TRAFFIC_MONTH = "&preset=traffic&dimensions=ym:s:datePeriod<group>&group=day&metrics=ym:s:visits,ym:s:users&date1=14daysAgo&date2=today";
     
     
-    public function getData($type_data)
+    public function getData($i)
     {
-        $url = $this->setUrl($type_data);
+        switch ($i) {
+            case "daily_summary":
+                $parametrs = self::SUMMARY_DAILY;
+                break;
+            case "traffic_month":
+                $parametrs = self::TRAFFIC_MONTH;
+                break;
+        }
+        
+        $url = $this->setUrl($parametrs);
         return $this->curl($url);
     }
     
-    private function setUrl($type_data) 
+    private function setUrl($parametrs) 
     {
-        return self::HOST . $type_data . '.json?id=' . Yii::$app->settings->get('metrika.counter') . '&pretty=1' . '&oauth_token=' . Yii::$app->settings->get('metrika.token');
+        return self::HOST.'?ids='.Yii::$app->settings->get('metrika.counter').$parametrs.'&oauth_token='.Yii::$app->settings->get('metrika.token');
     }
+    
     
     public function curl( $url, $params = [] )
 	{
