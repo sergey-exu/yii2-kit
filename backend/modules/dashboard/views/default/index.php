@@ -72,19 +72,17 @@ $this->title = 'Статистика';
       </div>
       <div class="box-body">
         <div class="chart chartLine">
-          <canvas height="180" width="1072" id="areaChartLine" style="height: 180px; width: 1072px;"></canvas>
+          <canvas height="180" width="100%" id="areaChartLine" style="height: 180px; width: 100%;"></canvas>
           <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 50%; top: 40%;"></i>
         </div><!-- /.chart-responsive -->
       </div><!-- /.box-body -->
     </div><!-- /.box -->
   </div>
-</div>
 
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+  <div class="col-md-5">
     <div class="box box-default">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Источники: сводка</h3>
+                  <h3 class="box-title">Источники: сводка за 14 дней</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -93,12 +91,12 @@ $this->title = 'Статистика';
                 <div class="box-body">
                   <div class="row chartPie">
                     <i class="fa fa-spinner fa-pulse fa-2x" id='loader' style="position: absolute; left: 45%; top: 50%;"></i>
-                    <div class="col-md-6">
-                      <div class="chart">
-                        <canvas id="pieChart" height="155" width="186" style="width: 186px; height: 155px;"></canvas>
+                    <div class="col-md-5">
+                      <div class="chart" style="padding: 12px 0;">
+                        <canvas id="pieChart" height="155" width="100%" style="width: 100%; height: 155px;"></canvas>
                       </div>
                     </div><!-- /.col -->
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                       <div id="doughnut-legend"></div>
                     </div><!-- /.col -->
                   </div><!-- /.row -->

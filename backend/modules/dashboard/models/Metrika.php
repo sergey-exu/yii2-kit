@@ -9,8 +9,8 @@ class Metrika extends Object
 {
     const HOST = "https://api-metrika.yandex.ru/stat/v1/data";
     const SUMMARY_DAILY = "&metrics=ym:s:visits,ym:s:pageviews,ym:s:users,ym:s:percentNewVisitors&date1=today&date2=today";
-    const TRAFFIC_MONTH = "&preset=traffic&dimensions=ym:s:datePeriod<group>&group=day&metrics=ym:s:visits,ym:s:users&date1=14daysAgo&date2=today";
-    
+    const TRAFFIC = "&preset=traffic&dimensions=ym:s:datePeriod<group>&group=day&metrics=ym:s:visits,ym:s:users&date1=14daysAgo&date2=today";
+    const SOURSES = "&dimensions=ym:s:<attribution>TrafficSource&metrics=ym:s:visits&date1=14daysAgo&date2=today";
     
     public function getData($i)
     {
@@ -18,8 +18,11 @@ class Metrika extends Object
             case "daily_summary":
                 $parametrs = self::SUMMARY_DAILY;
                 break;
-            case "traffic_month":
-                $parametrs = self::TRAFFIC_MONTH;
+            case "traffic":
+                $parametrs = self::TRAFFIC;
+                break;
+            case "sources":
+                $parametrs = self::SOURSES;
                 break;
         }
         

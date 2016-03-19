@@ -33,20 +33,20 @@ $(function () {
 //- AREA CHART 
 
 $(function () {
-    getData('traffic_month').then(function (json) { 
+    getData('traffic').then(function (json) { 
 
-        var vizits = [];
+        var AreaData = [];
         $.each(json.data, function (i, el) {
-            vizits.push({
+            AreaData.push({
                 date: (el.dimensions[0].name).replace(/(\d{4})-(\d{2})-(\d{2})/,'$3.$2'),
                 visits: el.metrics[0],
                 visitors: el.metrics[1]
             });
         });
     
-        var date = vizits.map(function(el) { return el.date} );
-        var visit = vizits.map(function(el) { return el.visits} );
-        var user = vizits.map(function(el) { return el.visitors} );
+        var date = AreaData.map(function(el) { return el.date} );
+        var visit = AreaData.map(function(el) { return el.visits} );
+        var user = AreaData.map(function(el) { return el.visitors} );
     
         var myElement = document.getElementById("areaChartLine").getContext("2d"),
         
@@ -84,18 +84,19 @@ $(function () {
 //- PIE CHART -
 //-------------
 
-/*
 $(function () {
     //если определеные цвета то загони их в массив как ниже и вытаскивай в цикле
     var colors = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'];
-    getData('sources').then(function (json) { 
+    getData('sources').then(function (json) {
+        
+        console.log(json);
+        
         var PieData = [];
         $.each(json.data, function (i, el) {
             PieData.push({
-                label: el.name,
-                value: el.visits,
-                color: colors[i],
-               
+                label: el.dimensions[0].name,
+                value: el.metrics[0],
+                color: colors[i]
             });
         });
         var pieOptions = {
@@ -113,4 +114,3 @@ $(function () {
     });
 
 });
- */
