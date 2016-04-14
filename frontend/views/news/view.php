@@ -15,6 +15,8 @@ $this->params['breadcrumbs'][] = $model->title;
 </div>
 <div class="news-view">
     <h1><?= Html::encode($model->title) ?></h1>
-    <p><?= Html::encode($model->summary) ?></p>
-    <div><?= Html::decode($model->text) ?></div>
+    <div>
+        <p><?= Html::encode($model->summary) ?></p>
+        <?= Html::decode($model->text) ?>
+    </div>
 </div>

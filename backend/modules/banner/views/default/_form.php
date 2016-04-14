@@ -22,7 +22,7 @@ use backend\modules\banner\models\Banner;
                 <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
                 <?= $form->field($model, 'img')->fileInput() ?>
                 <?php if(!$model->isNewRecord) : ?>
-                    <img src="<?= '/images/' . $model->img ?>" />
+                    <img src="<?= '/storage/banner/' . $model->img ?>" />
                 <?php endif; ?>
                 <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
             </div>
