@@ -40,7 +40,14 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'category',
             'prefix:ntext',
-            'log_time:datetime',
+            //'log_time:datetime',
+            [
+                'attribute' => 'log_time',
+                'format' => 'datetime',
+                'value' => function ($model) {
+                    return (int) $model->log_time;
+                }
+            ],
             // 'message:ntext',
 
             [
